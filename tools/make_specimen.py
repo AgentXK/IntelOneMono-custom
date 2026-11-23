@@ -96,7 +96,7 @@ def render_png(before: dict, after: dict) -> Path:
         text(x+w-22,y+64,note,ui(18),muted,anchor="rs")
     text(MARGIN,48,"TYPE SPECIMEN  /  定制字体对比",ui(19,True),teal)
     text(MARGIN,89,"Intel One Mono",ui(57,True))
-    text(MARGIN,170,"x-height 510 · 行高 1.25 em · AFDKO 导出",ui(28),muted)
+    text(MARGIN,170,f'x-height {after["xheight"]} · 行高 {after["line"]/after["upm"]:.2f} em · AFDKO 导出',ui(28),muted)
     text(WIDTH-MARGIN,111,"基于 Intel One Mono 1.5.0",ui(21),muted,"rt")
     text(WIDTH-MARGIN,151,"两侧始终使用相同字号",ui(21),muted,"rt")
     pwidth=(WIDTH-2*MARGIN-2*20)/3
@@ -159,7 +159,7 @@ def render_html(before:dict,after:dict)->Path:
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Intel One Mono · XH510 / LH1250 / AFDKO 修改版对比</title>
+<title>Intel One Mono · XH__XAFTER__ / LH__LAFTER__ / AFDKO 修改版对比</title>
 <style>
 __FONT_FACES__
 :root{color-scheme:light;--paper:#f5f4ef;--ink:#182a2c;--muted:#64706e;--accent:#087f73;--rule:#dee4de}
@@ -181,7 +181,7 @@ body.light-code .editor{background:#fff;border-color:var(--rule);color:var(--ink
 </style></head>
 <body><main>
 <div class="eyebrow">TYPE SPECIMEN / 离线字体对比</div>
-<h1>Intel One Mono <small>XH510 / LH1250 / AFDKO 修改版</small></h1>
+<h1>Intel One Mono <small>XH__XAFTER__ / LH__LAFTER__ / AFDKO 修改版</small></h1>
 <p class="intro">基于官方 OTF 修改并经 AFDKO otf2ttf 导出的版本：Regular x-height 为 510，保留原字体名称。左侧为官方原版 TTF，右侧为本次最终 TTF。两侧字号始终相同；你可以编辑任意一侧的代码，另一侧会同步显示，并切换行距模式单独比较字形。</p>
 <section class="metrics" aria-label="度量变化">
 <div class="metric"><span>Regular 小写 x-height</span><strong>__XBEFORE__ → __XAFTER__</strong><em>约 +__XPERCENT__%</em></div>
@@ -280,4 +280,3 @@ def main():
 
 if __name__=="__main__":
     main()
-

@@ -7,7 +7,7 @@
   "total_TTC_rasterizer_loads": 44320,
   "limitations": [
     "No physical macOS or Windows installation was tested; application line-height overrides remain application-dependent.",
-    "Preferred hhea/typo line-height is 1.25 em, while legacy applications reading Win metrics may use 1.50 em.",
+    "Preferred hhea/typo line-height is 1.30 em, while legacy applications reading Win metrics may use 1.50 em.",
     "All standalone glyph bounds fit the Win clipping metrics; arbitrary stacked combining marks may exceed those bounds or overlap at compact spacing.",
     "The original font supports only selected GPOS base/mark combinations; those source limitations remain.",
     "AFDKO otf2ttf does not preserve CFF hinting as TrueType hinting; these final TTFs have converter-generated unhinted outlines."
@@ -15,7 +15,7 @@
   "fonts": [
     {
       "file": "IntelOneMono-Bold.ttf",
-      "sha256": "1c616626b4e3309be2d519061f68e06cfe9c51fc41e47bf810a035b14185340d",
+      "sha256": "0a73dd32ca8d555a230c704875b8836e773252fa56d09854149d3b33c56b3a71",
       "source_sha256": "30c297c63a73921bcfb392904f5541faf2722f8739cc4fe9739ac14f8c8eaec6",
       "checks": {
         "ots": true,
@@ -34,15 +34,15 @@
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
-        "preferred_metrics_950_minus300_0": true,
+        "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
         "Win_metrics_1140_360": true,
         "all_glyph_bounds_fit_Win_metrics": true,
-        "full_block_exact_1250_height": true,
+        "full_block_matches_cell": true,
         "box_vertical_lines_cover_cell": true,
         "powerline_arrows_cover_cell": true,
         "FreeType_every_glyph_12_16_24_32_ppem": true,
-        "FreeType_preferred_height_1250": true,
+        "FreeType_preferred_height": true,
         "sample_shaping_glyphs_and_advances_preserved": true,
         "live_mark_attachment_top_moves_bottom_and_caps_stay": true,
         "no_new_canonical_equivalence_failures": true,
@@ -93,74 +93,74 @@
       "cell_bounds": {
         "0x2500": [
           -20,
-          253,
+          278,
           634,
-          397
+          422
         ],
         "0x2502": [
           235,
-          -353,
+          -356,
           379,
-          1003
+          1056
         ],
         "0x2503": [
           199,
-          -353,
+          -356,
           415,
-          1003
+          1056
         ],
         "0x2580": [
           0,
-          325,
+          350,
           614,
-          950
+          1000
         ],
         "0x2584": [
           0,
           -300,
           614,
-          325
+          350
         ],
         "0x2588": [
           0,
           -300,
           614,
-          950
+          1000
         ],
         "0x258c": [
           0,
           -300,
           307,
-          950
+          1000
         ],
         "0x2590": [
           307,
           -300,
           614,
-          950
+          1000
         ],
         "0xe0b0": [
           -20,
           -300,
           601,
-          950
+          1000
         ],
         "0xe0b2": [
           13,
           -300,
           634,
-          950
+          1000
         ]
       },
       "outside_Win_bounds": {},
       "real_xheight": 522,
       "recorded_xheight": 522,
-      "preferred_line_height": 1250,
+      "preferred_line_height": 1300,
       "Win_line_height": 1500
     },
     {
       "file": "IntelOneMono-BoldItalic.ttf",
-      "sha256": "24689a71588c78f9c4fe9650b934f41fcdbce5674d2497ddfd423e067456ebd0",
+      "sha256": "231823a11a69f14d3e90b6302f1cc082f99901734fc785f78b95a5363ee1602a",
       "source_sha256": "2b0f7c4e13845c3720c07a5d4efe9df626d3be10f606e5c94732ef4b3f36d3bd",
       "checks": {
         "ots": true,
@@ -179,15 +179,15 @@
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
-        "preferred_metrics_950_minus300_0": true,
+        "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
         "Win_metrics_1140_360": true,
         "all_glyph_bounds_fit_Win_metrics": true,
-        "full_block_exact_1250_height": true,
+        "full_block_matches_cell": true,
         "box_vertical_lines_cover_cell": true,
         "powerline_arrows_cover_cell": true,
         "FreeType_every_glyph_12_16_24_32_ppem": true,
-        "FreeType_preferred_height_1250": true,
+        "FreeType_preferred_height": true,
         "sample_shaping_glyphs_and_advances_preserved": true,
         "live_mark_attachment_top_moves_bottom_and_caps_stay": true,
         "no_new_canonical_equivalence_failures": true,
@@ -238,74 +238,74 @@
       "cell_bounds": {
         "0x2500": [
           -20,
-          253,
+          278,
           634,
-          397
+          422
         ],
         "0x2502": [
           235,
-          -353,
+          -356,
           379,
-          1003
+          1056
         ],
         "0x2503": [
           199,
-          -353,
+          -356,
           415,
-          1003
+          1056
         ],
         "0x2580": [
           0,
-          325,
+          350,
           614,
-          950
+          1000
         ],
         "0x2584": [
           0,
           -300,
           614,
-          325
+          350
         ],
         "0x2588": [
           0,
           -300,
           614,
-          950
+          1000
         ],
         "0x258c": [
           0,
           -300,
           307,
-          950
+          1000
         ],
         "0x2590": [
           307,
           -300,
           614,
-          950
+          1000
         ],
         "0xe0b0": [
           -20,
           -300,
           601,
-          950
+          1000
         ],
         "0xe0b2": [
           13,
           -300,
           634,
-          950
+          1000
         ]
       },
       "outside_Win_bounds": {},
       "real_xheight": 522,
       "recorded_xheight": 522,
-      "preferred_line_height": 1250,
+      "preferred_line_height": 1300,
       "Win_line_height": 1500
     },
     {
       "file": "IntelOneMono-Italic.ttf",
-      "sha256": "cfbf1c24f8c78a1f068b10b08e560e8400b76056bd78dc954533d67cab158c06",
+      "sha256": "4e2038dcd22798c55ad15a35df440c7c30fc96ee91a8e2b4aaa0d2693c221901",
       "source_sha256": "8ef394a3e9d3d83d07556a14c04a9a1ceac8deaae152c608d82145c42812ace1",
       "checks": {
         "ots": true,
@@ -324,15 +324,15 @@
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
-        "preferred_metrics_950_minus300_0": true,
+        "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
         "Win_metrics_1140_360": true,
         "all_glyph_bounds_fit_Win_metrics": true,
-        "full_block_exact_1250_height": true,
+        "full_block_matches_cell": true,
         "box_vertical_lines_cover_cell": true,
         "powerline_arrows_cover_cell": true,
         "FreeType_every_glyph_12_16_24_32_ppem": true,
-        "FreeType_preferred_height_1250": true,
+        "FreeType_preferred_height": true,
         "sample_shaping_glyphs_and_advances_preserved": true,
         "live_mark_attachment_top_moves_bottom_and_caps_stay": true,
         "no_new_canonical_equivalence_failures": true,
@@ -383,74 +383,74 @@
       "cell_bounds": {
         "0x2500": [
           -20,
-          282,
+          307,
           634,
-          369
+          394
         ],
         "0x2502": [
           264,
-          -353,
+          -356,
           351,
-          1003
+          1056
         ],
         "0x2503": [
           221,
-          -353,
+          -356,
           393,
-          1003
+          1056
         ],
         "0x2580": [
           0,
-          325,
+          350,
           614,
-          950
+          1000
         ],
         "0x2584": [
           0,
           -300,
           614,
-          325
+          350
         ],
         "0x2588": [
           0,
           -300,
           614,
-          950
+          1000
         ],
         "0x258c": [
           0,
           -300,
           307,
-          950
+          1000
         ],
         "0x2590": [
           307,
           -300,
           614,
-          950
+          1000
         ],
         "0xe0b0": [
           -20,
           -300,
           601,
-          950
+          1000
         ],
         "0xe0b2": [
           13,
           -300,
           634,
-          950
+          1000
         ]
       },
       "outside_Win_bounds": {},
       "real_xheight": 510,
       "recorded_xheight": 510,
-      "preferred_line_height": 1250,
+      "preferred_line_height": 1300,
       "Win_line_height": 1500
     },
     {
       "file": "IntelOneMono-Light.ttf",
-      "sha256": "e02327a46ef62182532aa0be00408509601575746cd592b87399fa8486847966",
+      "sha256": "0ea95f8bba9a8d9f73344234e197f23fe42db40bc29b72fe8a3e773bb6daaf25",
       "source_sha256": "ac2ce72941aeba486d30da4d55957f15d3888c1f302e73482cf3fe74a56ef2c6",
       "checks": {
         "ots": true,
@@ -469,15 +469,15 @@
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
-        "preferred_metrics_950_minus300_0": true,
+        "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
         "Win_metrics_1140_360": true,
         "all_glyph_bounds_fit_Win_metrics": true,
-        "full_block_exact_1250_height": true,
+        "full_block_matches_cell": true,
         "box_vertical_lines_cover_cell": true,
         "powerline_arrows_cover_cell": true,
         "FreeType_every_glyph_12_16_24_32_ppem": true,
-        "FreeType_preferred_height_1250": true,
+        "FreeType_preferred_height": true,
         "sample_shaping_glyphs_and_advances_preserved": true,
         "live_mark_attachment_top_moves_bottom_and_caps_stay": true,
         "no_new_canonical_equivalence_failures": true,
@@ -528,74 +528,74 @@
       "cell_bounds": {
         "0x2500": [
           -20,
-          295,
+          320,
           634,
-          356
+          381
         ],
         "0x2502": [
           277,
-          -353,
+          -356,
           338,
-          1003
+          1056
         ],
         "0x2503": [
           231,
-          -353,
+          -356,
           383,
-          1003
+          1056
         ],
         "0x2580": [
           0,
-          325,
+          350,
           614,
-          950
+          1000
         ],
         "0x2584": [
           0,
           -300,
           614,
-          325
+          350
         ],
         "0x2588": [
           0,
           -300,
           614,
-          950
+          1000
         ],
         "0x258c": [
           0,
           -300,
           307,
-          950
+          1000
         ],
         "0x2590": [
           307,
           -300,
           614,
-          950
+          1000
         ],
         "0xe0b0": [
           -20,
           -300,
           601,
-          950
+          1000
         ],
         "0xe0b2": [
           13,
           -300,
           634,
-          950
+          1000
         ]
       },
       "outside_Win_bounds": {},
       "real_xheight": 505,
       "recorded_xheight": 505,
-      "preferred_line_height": 1250,
+      "preferred_line_height": 1300,
       "Win_line_height": 1500
     },
     {
       "file": "IntelOneMono-LightItalic.ttf",
-      "sha256": "1a617cf885be3c39acf949771229f6162297f06517d58a306f664654137a7116",
+      "sha256": "d276fbd32d173b22fa1b1fedf94b15d2934bb82e9ac7e4031eb57e8b1333dece",
       "source_sha256": "9a93126429e91bccdda7109860ed0dfdbe3c66ea1702b371dfb17a56b55aef5c",
       "checks": {
         "ots": true,
@@ -614,15 +614,15 @@
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
-        "preferred_metrics_950_minus300_0": true,
+        "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
         "Win_metrics_1140_360": true,
         "all_glyph_bounds_fit_Win_metrics": true,
-        "full_block_exact_1250_height": true,
+        "full_block_matches_cell": true,
         "box_vertical_lines_cover_cell": true,
         "powerline_arrows_cover_cell": true,
         "FreeType_every_glyph_12_16_24_32_ppem": true,
-        "FreeType_preferred_height_1250": true,
+        "FreeType_preferred_height": true,
         "sample_shaping_glyphs_and_advances_preserved": true,
         "live_mark_attachment_top_moves_bottom_and_caps_stay": true,
         "no_new_canonical_equivalence_failures": true,
@@ -673,74 +673,74 @@
       "cell_bounds": {
         "0x2500": [
           -20,
-          295,
+          320,
           634,
-          356
+          381
         ],
         "0x2502": [
           277,
-          -353,
+          -356,
           338,
-          1003
+          1056
         ],
         "0x2503": [
           231,
-          -353,
+          -356,
           383,
-          1003
+          1056
         ],
         "0x2580": [
           0,
-          325,
+          350,
           614,
-          950
+          1000
         ],
         "0x2584": [
           0,
           -300,
           614,
-          325
+          350
         ],
         "0x2588": [
           0,
           -300,
           614,
-          950
+          1000
         ],
         "0x258c": [
           0,
           -300,
           307,
-          950
+          1000
         ],
         "0x2590": [
           307,
           -300,
           614,
-          950
+          1000
         ],
         "0xe0b0": [
           -20,
           -300,
           601,
-          950
+          1000
         ],
         "0xe0b2": [
           13,
           -300,
           634,
-          950
+          1000
         ]
       },
       "outside_Win_bounds": {},
       "real_xheight": 505,
       "recorded_xheight": 505,
-      "preferred_line_height": 1250,
+      "preferred_line_height": 1300,
       "Win_line_height": 1500
     },
     {
       "file": "IntelOneMono-Medium.ttf",
-      "sha256": "f68b689e6c7f2f9c42b2f92c76063e330a534d7799e03a5bb218f56b85b44437",
+      "sha256": "fd85a66149a8138284e71966c6ea3a85980473c4e1f568746c9210e93ab9ecba",
       "source_sha256": "346b87209566d93376205581b22541833375fb835e98f707d76585de5c3b54c9",
       "checks": {
         "ots": true,
@@ -759,15 +759,15 @@
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
-        "preferred_metrics_950_minus300_0": true,
+        "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
         "Win_metrics_1140_360": true,
         "all_glyph_bounds_fit_Win_metrics": true,
-        "full_block_exact_1250_height": true,
+        "full_block_matches_cell": true,
         "box_vertical_lines_cover_cell": true,
         "powerline_arrows_cover_cell": true,
         "FreeType_every_glyph_12_16_24_32_ppem": true,
-        "FreeType_preferred_height_1250": true,
+        "FreeType_preferred_height": true,
         "sample_shaping_glyphs_and_advances_preserved": true,
         "live_mark_attachment_top_moves_bottom_and_caps_stay": true,
         "no_new_canonical_equivalence_failures": true,
@@ -818,74 +818,74 @@
       "cell_bounds": {
         "0x2500": [
           -20,
-          269,
+          294,
           634,
-          381
+          406
         ],
         "0x2502": [
           251,
-          -353,
+          -356,
           363,
-          1003
+          1056
         ],
         "0x2503": [
           211,
-          -353,
+          -356,
           403,
-          1003
+          1056
         ],
         "0x2580": [
           0,
-          325,
+          350,
           614,
-          950
+          1000
         ],
         "0x2584": [
           0,
           -300,
           614,
-          325
+          350
         ],
         "0x2588": [
           0,
           -300,
           614,
-          950
+          1000
         ],
         "0x258c": [
           0,
           -300,
           307,
-          950
+          1000
         ],
         "0x2590": [
           307,
           -300,
           614,
-          950
+          1000
         ],
         "0xe0b0": [
           -20,
           -300,
           601,
-          950
+          1000
         ],
         "0xe0b2": [
           13,
           -300,
           634,
-          950
+          1000
         ]
       },
       "outside_Win_bounds": {},
       "real_xheight": 516,
       "recorded_xheight": 516,
-      "preferred_line_height": 1250,
+      "preferred_line_height": 1300,
       "Win_line_height": 1500
     },
     {
       "file": "IntelOneMono-MediumItalic.ttf",
-      "sha256": "ff0fc8643f783688677a580d0980f026d1a51198b42c5c3e9eaa67f9e7c238a2",
+      "sha256": "1a785bba2cc46fc862875d5de7486f3a71596a19ab259da25d2c5103416bb6b3",
       "source_sha256": "469b93e5789ff6336840b3e30cb07a288a355d992aa18af7544eec6fed8219ea",
       "checks": {
         "ots": true,
@@ -904,15 +904,15 @@
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
-        "preferred_metrics_950_minus300_0": true,
+        "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
         "Win_metrics_1140_360": true,
         "all_glyph_bounds_fit_Win_metrics": true,
-        "full_block_exact_1250_height": true,
+        "full_block_matches_cell": true,
         "box_vertical_lines_cover_cell": true,
         "powerline_arrows_cover_cell": true,
         "FreeType_every_glyph_12_16_24_32_ppem": true,
-        "FreeType_preferred_height_1250": true,
+        "FreeType_preferred_height": true,
         "sample_shaping_glyphs_and_advances_preserved": true,
         "live_mark_attachment_top_moves_bottom_and_caps_stay": true,
         "no_new_canonical_equivalence_failures": true,
@@ -963,74 +963,74 @@
       "cell_bounds": {
         "0x2500": [
           -20,
-          269,
+          294,
           634,
-          381
+          406
         ],
         "0x2502": [
           251,
-          -353,
+          -356,
           363,
-          1003
+          1056
         ],
         "0x2503": [
           211,
-          -353,
+          -356,
           403,
-          1003
+          1056
         ],
         "0x2580": [
           0,
-          325,
+          350,
           614,
-          950
+          1000
         ],
         "0x2584": [
           0,
           -300,
           614,
-          325
+          350
         ],
         "0x2588": [
           0,
           -300,
           614,
-          950
+          1000
         ],
         "0x258c": [
           0,
           -300,
           307,
-          950
+          1000
         ],
         "0x2590": [
           307,
           -300,
           614,
-          950
+          1000
         ],
         "0xe0b0": [
           -20,
           -300,
           601,
-          950
+          1000
         ],
         "0xe0b2": [
           13,
           -300,
           634,
-          950
+          1000
         ]
       },
       "outside_Win_bounds": {},
       "real_xheight": 516,
       "recorded_xheight": 516,
-      "preferred_line_height": 1250,
+      "preferred_line_height": 1300,
       "Win_line_height": 1500
     },
     {
       "file": "IntelOneMono-Regular.ttf",
-      "sha256": "aaac129c01e1921db18e2a64aad41de59fbe792f86cc510a1431df3eaec60ca1",
+      "sha256": "98572b68f5cb6baf932fb7a6f3d4141172695138098f859cdf18fc0bc0e29792",
       "source_sha256": "ca7968fea6381d0cfa91ab8f70d50a9fb256867fbe63170aa24bb5afe68532a9",
       "checks": {
         "ots": true,
@@ -1049,15 +1049,15 @@
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
-        "preferred_metrics_950_minus300_0": true,
+        "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
         "Win_metrics_1140_360": true,
         "all_glyph_bounds_fit_Win_metrics": true,
-        "full_block_exact_1250_height": true,
+        "full_block_matches_cell": true,
         "box_vertical_lines_cover_cell": true,
         "powerline_arrows_cover_cell": true,
         "FreeType_every_glyph_12_16_24_32_ppem": true,
-        "FreeType_preferred_height_1250": true,
+        "FreeType_preferred_height": true,
         "sample_shaping_glyphs_and_advances_preserved": true,
         "live_mark_attachment_top_moves_bottom_and_caps_stay": true,
         "no_new_canonical_equivalence_failures": true,
@@ -1108,95 +1108,103 @@
       "cell_bounds": {
         "0x2500": [
           -20,
-          282,
+          307,
           634,
-          369
+          394
         ],
         "0x2502": [
           264,
-          -353,
+          -356,
           351,
-          1003
+          1056
         ],
         "0x2503": [
           221,
-          -353,
+          -356,
           393,
-          1003
+          1056
         ],
         "0x2580": [
           0,
-          325,
+          350,
           614,
-          950
+          1000
         ],
         "0x2584": [
           0,
           -300,
           614,
-          325
+          350
         ],
         "0x2588": [
           0,
           -300,
           614,
-          950
+          1000
         ],
         "0x258c": [
           0,
           -300,
           307,
-          950
+          1000
         ],
         "0x2590": [
           307,
           -300,
           614,
-          950
+          1000
         ],
         "0xe0b0": [
           -20,
           -300,
           601,
-          950
+          1000
         ],
         "0xe0b2": [
           13,
           -300,
           634,
-          950
+          1000
         ]
       },
       "outside_Win_bounds": {},
       "real_xheight": 510,
       "recorded_xheight": 510,
-      "preferred_line_height": 1250,
+      "preferred_line_height": 1300,
       "Win_line_height": 1500
     }
   ],
   "collection": {
     "file": "IntelOneMono.ttc",
-    "sha256": "ff32fe1a7ee9f47ee95b67f9000fc059d3bcf889b4dfeaa7cd7e023c983bbe00",
+    "sha256": "1cbe053f9497af9e574db946eb205b3e6634797c054349b6d39e76de6bd849e8",
     "checks": {
       "TTC_signature": true,
       "exactly_eight_faces": true,
       "unique_original_PostScript_names": true,
       "face_0_table_payloads_match_TTF": true,
       "face_0_FreeType_all_glyphs_all_sizes": true,
+      "face_0_FreeType_preferred_height": true,
       "face_1_table_payloads_match_TTF": true,
       "face_1_FreeType_all_glyphs_all_sizes": true,
+      "face_1_FreeType_preferred_height": true,
       "face_2_table_payloads_match_TTF": true,
       "face_2_FreeType_all_glyphs_all_sizes": true,
+      "face_2_FreeType_preferred_height": true,
       "face_3_table_payloads_match_TTF": true,
       "face_3_FreeType_all_glyphs_all_sizes": true,
+      "face_3_FreeType_preferred_height": true,
       "face_4_table_payloads_match_TTF": true,
       "face_4_FreeType_all_glyphs_all_sizes": true,
+      "face_4_FreeType_preferred_height": true,
       "face_5_table_payloads_match_TTF": true,
       "face_5_FreeType_all_glyphs_all_sizes": true,
+      "face_5_FreeType_preferred_height": true,
       "face_6_table_payloads_match_TTF": true,
       "face_6_FreeType_all_glyphs_all_sizes": true,
+      "face_6_FreeType_preferred_height": true,
       "face_7_table_payloads_match_TTF": true,
       "face_7_FreeType_all_glyphs_all_sizes": true,
+      "face_7_FreeType_preferred_height": true,
       "OTS_collection": true
     },
     "failures": [],
@@ -1212,7 +1220,8 @@
         "rasterizer_loads": 5540,
         "rasterizer_failures": [],
         "FreeType_num_faces": 8,
-        "FreeType_glyph_count": 1385
+        "FreeType_glyph_count": 1385,
+        "preferred_line_height": 1300
       },
       {
         "index": 1,
@@ -1224,7 +1233,8 @@
         "rasterizer_loads": 5540,
         "rasterizer_failures": [],
         "FreeType_num_faces": 8,
-        "FreeType_glyph_count": 1385
+        "FreeType_glyph_count": 1385,
+        "preferred_line_height": 1300
       },
       {
         "index": 2,
@@ -1236,7 +1246,8 @@
         "rasterizer_loads": 5540,
         "rasterizer_failures": [],
         "FreeType_num_faces": 8,
-        "FreeType_glyph_count": 1385
+        "FreeType_glyph_count": 1385,
+        "preferred_line_height": 1300
       },
       {
         "index": 3,
@@ -1248,7 +1259,8 @@
         "rasterizer_loads": 5540,
         "rasterizer_failures": [],
         "FreeType_num_faces": 8,
-        "FreeType_glyph_count": 1385
+        "FreeType_glyph_count": 1385,
+        "preferred_line_height": 1300
       },
       {
         "index": 4,
@@ -1260,7 +1272,8 @@
         "rasterizer_loads": 5540,
         "rasterizer_failures": [],
         "FreeType_num_faces": 8,
-        "FreeType_glyph_count": 1385
+        "FreeType_glyph_count": 1385,
+        "preferred_line_height": 1300
       },
       {
         "index": 5,
@@ -1272,7 +1285,8 @@
         "rasterizer_loads": 5540,
         "rasterizer_failures": [],
         "FreeType_num_faces": 8,
-        "FreeType_glyph_count": 1385
+        "FreeType_glyph_count": 1385,
+        "preferred_line_height": 1300
       },
       {
         "index": 6,
@@ -1284,7 +1298,8 @@
         "rasterizer_loads": 5540,
         "rasterizer_failures": [],
         "FreeType_num_faces": 8,
-        "FreeType_glyph_count": 1385
+        "FreeType_glyph_count": 1385,
+        "preferred_line_height": 1300
       },
       {
         "index": 7,
@@ -1296,7 +1311,8 @@
         "rasterizer_loads": 5540,
         "rasterizer_failures": [],
         "FreeType_num_faces": 8,
-        "FreeType_glyph_count": 1385
+        "FreeType_glyph_count": 1385,
+        "preferred_line_height": 1300
       }
     ],
     "ots_message": "File sanitized successfully!",

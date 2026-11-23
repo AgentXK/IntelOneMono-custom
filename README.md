@@ -5,7 +5,7 @@
 ## 修改内容
 
 - 所有样式的 x-height 增加 45 个设计单位，保留原有字重之间的差异。Regular 从 465 增至 510（UPM 1000）。
-- 推荐行高从 1.38 em 降至 1.25 em，框线、方块和 Powerline 字形按新行高调整。使用 Windows 度量的旧应用仍可能采用 1.50 em。
+- 推荐行高从 1.38 em 降至 1.30 em，框线、方块和 Powerline 字形按新行高调整。使用 Windows 度量的旧应用仍可能采用 1.50 em。
 - 保留等宽字宽。使用 Adobe AFDKO 生成 8 个 TTF，以及包含全部样式的一个 TTC；输出不含 TrueType hinting。
 
 ![原版与修改版字形和代码排版对比](Comparison.png)

@@ -26,6 +26,9 @@ import freetype
 import ots
 import uharfbuzz as hb
 
+EXPECTED_ASCENT, EXPECTED_DESCENT = 1000, -300
+EXPECTED_LINE_HEIGHT = EXPECTED_ASCENT - EXPECTED_DESCENT
+
 
 def shape(font, text, features=None, language="en"):
     buf = hb.Buffer()
@@ -138,16 +141,21 @@ def validate(original_path, modified_path, intermediate_path, max_error):
     check("all_non_target_outlines_match_independently_converted_official_CFF", not altered_protected)
 
     hhea, os2 = modified["hhea"], modified["OS/2"]
-    check("preferred_metrics_950_minus300_0", (hhea.ascent, hhea.descent, hhea.lineGap) == (os2.sTypoAscender, os2.sTypoDescender, os2.sTypoLineGap) == (950, -300, 0))
+    check("preferred_hhea_and_typo_metrics",
+          (hhea.ascent, hhea.descent, hhea.lineGap) == (os2.sTypoAscender, os2.sTypoDescender, os2.sTypoLineGap)
+          == (EXPECTED_ASCENT, EXPECTED_DESCENT, 0))
     check("USE_TYPO_METRICS_set", os2.fsSelection & (1 << 7))
     check("Win_metrics_1140_360", (os2.usWinAscent, os2.usWinDescent) == (1140, 360))
     all_bounds = {n: bounds(modified, n) for n in glyphs}
     outside_win = {n: b for n, b in all_bounds.items() if b and (b[1] < -360 or b[3] > 1140)}
     check("all_glyph_bounds_fit_Win_metrics", not outside_win)
     cell_bounds = {hex(cp): bounds(modified, mcmap[cp]) for cp in (0x2500, 0x2502, 0x2503, 0x2580, 0x2584, 0x2588, 0x258C, 0x2590, 0xE0B0, 0xE0B2)}
-    check("full_block_exact_1250_height", cell_bounds["0x2588"] == [0, -300, 614, 950])
-    check("box_vertical_lines_cover_cell", all(cell_bounds[hex(cp)][1] <= -300 and cell_bounds[hex(cp)][3] >= 950 for cp in (0x2502, 0x2503)))
-    check("powerline_arrows_cover_cell", all(cell_bounds[hex(cp)][1] <= -300 and cell_bounds[hex(cp)][3] >= 950 for cp in (0xE0B0, 0xE0B2)))
+    check("full_block_matches_cell", cell_bounds["0x2588"] == [0, EXPECTED_DESCENT, 614, EXPECTED_ASCENT])
+    def covers_cell(cp):
+        _, ymin, _, ymax = cell_bounds[hex(cp)]
+        return ymin <= EXPECTED_DESCENT and ymax >= EXPECTED_ASCENT
+    check("box_vertical_lines_cover_cell", all(covers_cell(cp) for cp in (0x2502, 0x2503)))
+    check("powerline_arrows_cover_cell", all(covers_cell(cp) for cp in (0xE0B0, 0xE0B2)))
 
     face = freetype.Face(str(modified_path))
     rasterizer_failures = []
@@ -159,7 +167,7 @@ def validate(original_path, modified_path, intermediate_path, max_error):
             except Exception as exc:
                 rasterizer_failures.append({"ppem": size, "glyph": glyphs[gid], "error": str(exc)})
     check("FreeType_every_glyph_12_16_24_32_ppem", not rasterizer_failures)
-    check("FreeType_preferred_height_1250", face.height == 1250)
+    check("FreeType_preferred_height", face.height == EXPECTED_LINE_HEIGHT)
 
     samples = [
         ("def choose_route(routes, forecast): return best.path", "en"),
@@ -280,6 +288,7 @@ def validate_collection(collection_path, font_paths):
         load_ok = not render_failures and ft.num_faces == 8 and ft.num_glyphs == len(source.getGlyphOrder()) and ft_ps == ps
         check(f"face_{index}_table_payloads_match_TTF", matching)
         check(f"face_{index}_FreeType_all_glyphs_all_sizes", load_ok)
+        check(f"face_{index}_FreeType_preferred_height", ft.height == EXPECTED_LINE_HEIGHT)
         face_results.append({
             "index": index, "PostScript_name": ps,
             "family": font["name"].getBestFamilyName(),
@@ -290,6 +299,7 @@ def validate_collection(collection_path, font_paths):
             "rasterizer_failures": render_failures,
             "FreeType_num_faces": ft.num_faces,
             "FreeType_glyph_count": ft.num_glyphs,
+            "preferred_line_height": ft.height,
         })
     try:
         result = ots.sanitize(str(collection_path), check=True, capture_output=True)
@@ -341,7 +351,7 @@ def main():
         "total_TTC_rasterizer_loads": ttc_result["rasterizer_loads"],
         "limitations": [
             "No physical macOS or Windows installation was tested; application line-height overrides remain application-dependent.",
-            "Preferred hhea/typo line-height is 1.25 em, while legacy applications reading Win metrics may use 1.50 em.",
+            f"Preferred hhea/typo line-height is {EXPECTED_LINE_HEIGHT / 1000:.2f} em, while legacy applications reading Win metrics may use 1.50 em.",
             "All standalone glyph bounds fit the Win clipping metrics; arbitrary stacked combining marks may exceed those bounds or overlap at compact spacing.",
             "The original font supports only selected GPOS base/mark combinations; those source limitations remain.",
             "AFDKO otf2ttf does not preserve CFF hinting as TrueType hinting; these final TTFs have converter-generated unhinted outlines.",

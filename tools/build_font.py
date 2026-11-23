@@ -29,9 +29,12 @@ from fontTools.ttLib import TTCollection, TTFont
 from cff_components import classify, splitContours
 
 FAMILY = "Intel One Mono"
-VERSION = "1.503"
+VERSION = "1.504"
 DELTA = 45
-ASCENT, DESCENT = 950, -300
+# Add the extra line space above the baseline so vertical box strokes still
+# fit the existing Windows clipping descent of 360 units.
+ASCENT, DESCENT = 1000, -300
+LINE_HEIGHT = ASCENT - DESCENT
 WIN_ASCENT, WIN_DESCENT = 1140, 360
 MAX_ERROR = 0.1
 STYLES = ["Regular", "Italic", "Light", "LightItalic", "Medium", "MediumItalic", "Bold", "BoldItalic"]
@@ -82,11 +85,11 @@ def glyph_rise(y: float, name: str, top: float, xheight: float, guard: float) ->
 def cell_y(y: float, box: bool) -> float:
     old_center, new_center = 330.0, (ASCENT + DESCENT) / 2
     if not box:
-        return new_center + (y - old_center) * (ASCENT - DESCENT) / 1380.0
+        return new_center + (y - old_center) * LINE_HEIGHT / 1380.0
     d = y - old_center
     if abs(d) <= 140:
         return new_center + d
-    half = (ASCENT - DESCENT) / 2
+    half = LINE_HEIGHT / 2
     return new_center + math.copysign(140 + (abs(d) - 140) * (half - 140) / (690 - 140), d)
 
 
@@ -109,13 +112,13 @@ def map_contour(contour: tuple, point_map) -> list:
 def preserve_names_update_metadata(font: TTFont, style: str) -> None:
     table = font["name"]
     replacement = {
-        3: f"{VERSION};XHED;IntelOneMono-{style};XH510LH1250Custom20261123",
-        5: f"Version {VERSION}; Custom XH510 LH1250; AFDKO otf2ttf",
+        3: f"{VERSION};XHED;IntelOneMono-{style};XH510LH{LINE_HEIGHT}Custom20261123",
+        5: f"Version {VERSION}; Custom XH510 LH{LINE_HEIGHT}; AFDKO otf2ttf",
         10: (
             "User-requested custom edit of Intel One Mono 1.5.0. Original family, "
             "style and PostScript names retained. Regular/Italic x-height 510; "
             "all weights raised 45 units to preserve original weight differences. "
-            "Preferred line height 1250/1000 em. Edited CFF outlines exported by "
+            f"Preferred line height {LINE_HEIGHT}/1000 em. Edited CFF outlines exported by "
             "Adobe AFDKO otf2ttf, without TrueType hinting. Not an official Intel "
             "release. Original OFL and Reserved Font Name provisions still apply."
         ),
@@ -264,7 +267,7 @@ def edit_cff(source: Path, ttf_reference: Path, destination: Path) -> dict:
         "cap_height": os2.sCapHeight, "units_per_em": font["head"].unitsPerEm,
         "glyph_count": len(order), "unicode_entries": len(cmap),
         "ascii_advance": font["hmtx"]["x"][0],
-        "preferred_line_height_before": 1380, "preferred_line_height_after": ASCENT - DESCENT,
+        "preferred_line_height_before": 1380, "preferred_line_height_after": LINE_HEIGHT,
         "hhea_and_typo": [ASCENT, DESCENT, 0], "win_clipping_metrics": [WIN_ASCENT, WIN_DESCENT],
         "lowercase_changed": changed, "composite_lowercase_updated": composite_names,
         "cell_glyphs_changed": cells, "mark_base_anchors_changed": anchors_changed,
@@ -327,7 +330,7 @@ def main() -> None:
         "commands": {"ttf": convert[1:], "ttc": collect[1:]}, "fonts": records,
         "collection": {"file": "collection/IntelOneMono.ttc", "sha256": sha256(collection), "face_order": STYLES, "face_count": 8},
         "limitations": [
-            "Preferred line height 1.25em; application settings may override it.",
+            f"Preferred line height {LINE_HEIGHT / 1000:.2f}em; application settings may override it.",
             "Legacy software using Win metrics may use 1.50em; clipping bounds are retained for accents.",
             "This direct AFDKO conversion does not contain the original manual or previous custom automatic TrueType hinting.",
             "Install either the eight TTFs or the TTC, not both; original-name versions replace earlier installations.",

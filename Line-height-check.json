@@ -1,574 +1,728 @@
 {
   "family": "Intel One Mono",
   "validation_date": "2026-11-23",
-  "scope": "Targeted 1200 to1250 line-height revision validation against immediately preceding XH510 build",
+  "scope": "Targeted 1250 to 1300 line-height revision validation against the preceding XH510 build",
+  "preferred_line_height_before": 1250,
+  "preferred_line_height_after": 1300,
+  "all_checks_passed": true,
   "fonts": [
     {
-      "file": "IntelOneMono-Regular.ttf",
-      "sha256": "aaac129c01e1921db18e2a64aad41de59fbe792f86cc510a1431df3eaec60ca1",
-      "checks": {
-        "hhea_and_typo_950_minus300_0": true,
-        "FreeType_preferred_height1250": true,
-        "xheight_unchanged": true,
-        "non_cell_glyphs_exactly_unchanged": true,
-        "GPOS_exactly_unchanged": true,
-        "GSUB_exactly_unchanged": true,
-        "all_advances_unchanged": true,
-        "glyph_order_and_cmap_unchanged": true,
-        "original_identity_names_unchanged": true,
-        "full_block_bounds1250": true,
-        "vertical_boxes_powerline_cover_cell": true,
-        "Win_metrics_and_glyph_bounds_fit": true,
-        "OTS_pass": true,
-        "FreeType_sample_loads_pass": true
-      },
-      "failures": [],
-      "non_cell_glyphs_compared": 1185,
-      "cell_glyphs": 200,
-      "unexpected_changed_noncell": [],
-      "full_block_bounds": [
-        0,
-        -300,
-        614,
-        950
-      ],
-      "border_bounds": {
-        "0x2502": [
-          -353,
-          1003
-        ],
-        "0x2503": [
-          -353,
-          1003
-        ],
-        "0xe0b0": [
-          -300,
-          950
-        ],
-        "0xe0b2": [
-          -300,
-          950
-        ]
-      },
-      "global_y_bounds": [
-        -353,
-        1098
-      ],
-      "clipped_glyphs": []
-    },
-    {
-      "file": "IntelOneMono-Italic.ttf",
-      "sha256": "cfbf1c24f8c78a1f068b10b08e560e8400b76056bd78dc954533d67cab158c06",
-      "checks": {
-        "hhea_and_typo_950_minus300_0": true,
-        "FreeType_preferred_height1250": true,
-        "xheight_unchanged": true,
-        "non_cell_glyphs_exactly_unchanged": true,
-        "GPOS_exactly_unchanged": true,
-        "GSUB_exactly_unchanged": true,
-        "all_advances_unchanged": true,
-        "glyph_order_and_cmap_unchanged": true,
-        "original_identity_names_unchanged": true,
-        "full_block_bounds1250": true,
-        "vertical_boxes_powerline_cover_cell": true,
-        "Win_metrics_and_glyph_bounds_fit": true,
-        "OTS_pass": true,
-        "FreeType_sample_loads_pass": true
-      },
-      "failures": [],
-      "non_cell_glyphs_compared": 1185,
-      "cell_glyphs": 200,
-      "unexpected_changed_noncell": [],
-      "full_block_bounds": [
-        0,
-        -300,
-        614,
-        950
-      ],
-      "border_bounds": {
-        "0x2502": [
-          -353,
-          1003
-        ],
-        "0x2503": [
-          -353,
-          1003
-        ],
-        "0xe0b0": [
-          -300,
-          950
-        ],
-        "0xe0b2": [
-          -300,
-          950
-        ]
-      },
-      "global_y_bounds": [
-        -353,
-        1096
-      ],
-      "clipped_glyphs": []
-    },
-    {
-      "file": "IntelOneMono-Light.ttf",
-      "sha256": "e02327a46ef62182532aa0be00408509601575746cd592b87399fa8486847966",
-      "checks": {
-        "hhea_and_typo_950_minus300_0": true,
-        "FreeType_preferred_height1250": true,
-        "xheight_unchanged": true,
-        "non_cell_glyphs_exactly_unchanged": true,
-        "GPOS_exactly_unchanged": true,
-        "GSUB_exactly_unchanged": true,
-        "all_advances_unchanged": true,
-        "glyph_order_and_cmap_unchanged": true,
-        "original_identity_names_unchanged": true,
-        "full_block_bounds1250": true,
-        "vertical_boxes_powerline_cover_cell": true,
-        "Win_metrics_and_glyph_bounds_fit": true,
-        "OTS_pass": true,
-        "FreeType_sample_loads_pass": true
-      },
-      "failures": [],
-      "non_cell_glyphs_compared": 1185,
-      "cell_glyphs": 200,
-      "unexpected_changed_noncell": [],
-      "full_block_bounds": [
-        0,
-        -300,
-        614,
-        950
-      ],
-      "border_bounds": {
-        "0x2502": [
-          -353,
-          1003
-        ],
-        "0x2503": [
-          -353,
-          1003
-        ],
-        "0xe0b0": [
-          -300,
-          950
-        ],
-        "0xe0b2": [
-          -300,
-          950
-        ]
-      },
-      "global_y_bounds": [
-        -353,
-        1089
-      ],
-      "clipped_glyphs": []
-    },
-    {
-      "file": "IntelOneMono-LightItalic.ttf",
-      "sha256": "1a617cf885be3c39acf949771229f6162297f06517d58a306f664654137a7116",
-      "checks": {
-        "hhea_and_typo_950_minus300_0": true,
-        "FreeType_preferred_height1250": true,
-        "xheight_unchanged": true,
-        "non_cell_glyphs_exactly_unchanged": true,
-        "GPOS_exactly_unchanged": true,
-        "GSUB_exactly_unchanged": true,
-        "all_advances_unchanged": true,
-        "glyph_order_and_cmap_unchanged": true,
-        "original_identity_names_unchanged": true,
-        "full_block_bounds1250": true,
-        "vertical_boxes_powerline_cover_cell": true,
-        "Win_metrics_and_glyph_bounds_fit": true,
-        "OTS_pass": true,
-        "FreeType_sample_loads_pass": true
-      },
-      "failures": [],
-      "non_cell_glyphs_compared": 1185,
-      "cell_glyphs": 200,
-      "unexpected_changed_noncell": [],
-      "full_block_bounds": [
-        0,
-        -300,
-        614,
-        950
-      ],
-      "border_bounds": {
-        "0x2502": [
-          -353,
-          1003
-        ],
-        "0x2503": [
-          -353,
-          1003
-        ],
-        "0xe0b0": [
-          -300,
-          950
-        ],
-        "0xe0b2": [
-          -300,
-          950
-        ]
-      },
-      "global_y_bounds": [
-        -353,
-        1084
-      ],
-      "clipped_glyphs": []
-    },
-    {
-      "file": "IntelOneMono-Medium.ttf",
-      "sha256": "f68b689e6c7f2f9c42b2f92c76063e330a534d7799e03a5bb218f56b85b44437",
-      "checks": {
-        "hhea_and_typo_950_minus300_0": true,
-        "FreeType_preferred_height1250": true,
-        "xheight_unchanged": true,
-        "non_cell_glyphs_exactly_unchanged": true,
-        "GPOS_exactly_unchanged": true,
-        "GSUB_exactly_unchanged": true,
-        "all_advances_unchanged": true,
-        "glyph_order_and_cmap_unchanged": true,
-        "original_identity_names_unchanged": true,
-        "full_block_bounds1250": true,
-        "vertical_boxes_powerline_cover_cell": true,
-        "Win_metrics_and_glyph_bounds_fit": true,
-        "OTS_pass": true,
-        "FreeType_sample_loads_pass": true
-      },
-      "failures": [],
-      "non_cell_glyphs_compared": 1185,
-      "cell_glyphs": 200,
-      "unexpected_changed_noncell": [],
-      "full_block_bounds": [
-        0,
-        -300,
-        614,
-        950
-      ],
-      "border_bounds": {
-        "0x2502": [
-          -353,
-          1003
-        ],
-        "0x2503": [
-          -353,
-          1003
-        ],
-        "0xe0b0": [
-          -300,
-          950
-        ],
-        "0xe0b2": [
-          -300,
-          950
-        ]
-      },
-      "global_y_bounds": [
-        -353,
-        1106
-      ],
-      "clipped_glyphs": []
-    },
-    {
-      "file": "IntelOneMono-MediumItalic.ttf",
-      "sha256": "ff0fc8643f783688677a580d0980f026d1a51198b42c5c3e9eaa67f9e7c238a2",
-      "checks": {
-        "hhea_and_typo_950_minus300_0": true,
-        "FreeType_preferred_height1250": true,
-        "xheight_unchanged": true,
-        "non_cell_glyphs_exactly_unchanged": true,
-        "GPOS_exactly_unchanged": true,
-        "GSUB_exactly_unchanged": true,
-        "all_advances_unchanged": true,
-        "glyph_order_and_cmap_unchanged": true,
-        "original_identity_names_unchanged": true,
-        "full_block_bounds1250": true,
-        "vertical_boxes_powerline_cover_cell": true,
-        "Win_metrics_and_glyph_bounds_fit": true,
-        "OTS_pass": true,
-        "FreeType_sample_loads_pass": true
-      },
-      "failures": [],
-      "non_cell_glyphs_compared": 1185,
-      "cell_glyphs": 200,
-      "unexpected_changed_noncell": [],
-      "full_block_bounds": [
-        0,
-        -300,
-        614,
-        950
-      ],
-      "border_bounds": {
-        "0x2502": [
-          -353,
-          1003
-        ],
-        "0x2503": [
-          -353,
-          1003
-        ],
-        "0xe0b0": [
-          -300,
-          950
-        ],
-        "0xe0b2": [
-          -300,
-          950
-        ]
-      },
-      "global_y_bounds": [
-        -353,
-        1108
-      ],
-      "clipped_glyphs": []
-    },
-    {
       "file": "IntelOneMono-Bold.ttf",
-      "sha256": "1c616626b4e3309be2d519061f68e06cfe9c51fc41e47bf810a035b14185340d",
+      "baseline_sha256": "1c616626b4e3309be2d519061f68e06cfe9c51fc41e47bf810a035b14185340d",
+      "sha256": "0a73dd32ca8d555a230c704875b8836e773252fa56d09854149d3b33c56b3a71",
       "checks": {
-        "hhea_and_typo_950_minus300_0": true,
-        "FreeType_preferred_height1250": true,
+        "baseline_is_LH1250": true,
+        "new_preferred_height_is_LH1300": true,
         "xheight_unchanged": true,
         "non_cell_glyphs_exactly_unchanged": true,
-        "GPOS_exactly_unchanged": true,
         "GSUB_exactly_unchanged": true,
         "all_advances_unchanged": true,
         "glyph_order_and_cmap_unchanged": true,
-        "original_identity_names_unchanged": true,
-        "full_block_bounds1250": true,
-        "vertical_boxes_powerline_cover_cell": true,
-        "Win_metrics_and_glyph_bounds_fit": true,
-        "OTS_pass": true,
-        "FreeType_sample_loads_pass": true
+        "font_names_unchanged": true,
+        "win_metrics_unchanged": true,
+        "full_block_box_and_powerline_fit": true,
+        "no_glyph_outside_win_metrics": true,
+        "GPOS_layout_unchanged": true
       },
       "failures": [],
       "non_cell_glyphs_compared": 1185,
-      "cell_glyphs": 200,
       "unexpected_changed_noncell": [],
-      "full_block_bounds": [
-        0,
-        -300,
-        614,
-        950
-      ],
-      "border_bounds": {
+      "cell_glyphs": 200,
+      "cell_bounds": {
+        "0x2500": [
+          -20,
+          278,
+          634,
+          422
+        ],
         "0x2502": [
-          -353,
-          1003
+          235,
+          -356,
+          379,
+          1056
         ],
         "0x2503": [
-          -353,
-          1003
+          199,
+          -356,
+          415,
+          1056
+        ],
+        "0x2580": [
+          0,
+          350,
+          614,
+          1000
+        ],
+        "0x2584": [
+          0,
+          -300,
+          614,
+          350
+        ],
+        "0x2588": [
+          0,
+          -300,
+          614,
+          1000
+        ],
+        "0x258c": [
+          0,
+          -300,
+          307,
+          1000
+        ],
+        "0x2590": [
+          307,
+          -300,
+          614,
+          1000
         ],
         "0xe0b0": [
+          -20,
           -300,
-          950
+          601,
+          1000
         ],
         "0xe0b2": [
+          13,
           -300,
-          950
+          634,
+          1000
         ]
-      },
-      "global_y_bounds": [
-        -353,
-        1117
-      ],
-      "clipped_glyphs": []
+      }
     },
     {
       "file": "IntelOneMono-BoldItalic.ttf",
-      "sha256": "24689a71588c78f9c4fe9650b934f41fcdbce5674d2497ddfd423e067456ebd0",
+      "baseline_sha256": "24689a71588c78f9c4fe9650b934f41fcdbce5674d2497ddfd423e067456ebd0",
+      "sha256": "231823a11a69f14d3e90b6302f1cc082f99901734fc785f78b95a5363ee1602a",
       "checks": {
-        "hhea_and_typo_950_minus300_0": true,
-        "FreeType_preferred_height1250": true,
+        "baseline_is_LH1250": true,
+        "new_preferred_height_is_LH1300": true,
         "xheight_unchanged": true,
         "non_cell_glyphs_exactly_unchanged": true,
-        "GPOS_exactly_unchanged": true,
         "GSUB_exactly_unchanged": true,
         "all_advances_unchanged": true,
         "glyph_order_and_cmap_unchanged": true,
-        "original_identity_names_unchanged": true,
-        "full_block_bounds1250": true,
-        "vertical_boxes_powerline_cover_cell": true,
-        "Win_metrics_and_glyph_bounds_fit": true,
-        "OTS_pass": true,
-        "FreeType_sample_loads_pass": true
+        "font_names_unchanged": true,
+        "win_metrics_unchanged": true,
+        "full_block_box_and_powerline_fit": true,
+        "no_glyph_outside_win_metrics": true,
+        "GPOS_layout_unchanged": true
       },
       "failures": [],
       "non_cell_glyphs_compared": 1185,
-      "cell_glyphs": 200,
       "unexpected_changed_noncell": [],
-      "full_block_bounds": [
-        0,
-        -300,
-        614,
-        950
-      ],
-      "border_bounds": {
+      "cell_glyphs": 200,
+      "cell_bounds": {
+        "0x2500": [
+          -20,
+          278,
+          634,
+          422
+        ],
         "0x2502": [
-          -353,
-          1003
+          235,
+          -356,
+          379,
+          1056
         ],
         "0x2503": [
-          -353,
-          1003
+          199,
+          -356,
+          415,
+          1056
+        ],
+        "0x2580": [
+          0,
+          350,
+          614,
+          1000
+        ],
+        "0x2584": [
+          0,
+          -300,
+          614,
+          350
+        ],
+        "0x2588": [
+          0,
+          -300,
+          614,
+          1000
+        ],
+        "0x258c": [
+          0,
+          -300,
+          307,
+          1000
+        ],
+        "0x2590": [
+          307,
+          -300,
+          614,
+          1000
         ],
         "0xe0b0": [
+          -20,
           -300,
-          950
+          601,
+          1000
         ],
         "0xe0b2": [
+          13,
           -300,
-          950
+          634,
+          1000
         ]
+      }
+    },
+    {
+      "file": "IntelOneMono-Italic.ttf",
+      "baseline_sha256": "cfbf1c24f8c78a1f068b10b08e560e8400b76056bd78dc954533d67cab158c06",
+      "sha256": "4e2038dcd22798c55ad15a35df440c7c30fc96ee91a8e2b4aaa0d2693c221901",
+      "checks": {
+        "baseline_is_LH1250": true,
+        "new_preferred_height_is_LH1300": true,
+        "xheight_unchanged": true,
+        "non_cell_glyphs_exactly_unchanged": true,
+        "GSUB_exactly_unchanged": true,
+        "all_advances_unchanged": true,
+        "glyph_order_and_cmap_unchanged": true,
+        "font_names_unchanged": true,
+        "win_metrics_unchanged": true,
+        "full_block_box_and_powerline_fit": true,
+        "no_glyph_outside_win_metrics": true,
+        "GPOS_layout_unchanged": true
       },
-      "global_y_bounds": [
-        -353,
-        1122
-      ],
-      "clipped_glyphs": []
+      "failures": [],
+      "non_cell_glyphs_compared": 1185,
+      "unexpected_changed_noncell": [],
+      "cell_glyphs": 200,
+      "cell_bounds": {
+        "0x2500": [
+          -20,
+          307,
+          634,
+          394
+        ],
+        "0x2502": [
+          264,
+          -356,
+          351,
+          1056
+        ],
+        "0x2503": [
+          221,
+          -356,
+          393,
+          1056
+        ],
+        "0x2580": [
+          0,
+          350,
+          614,
+          1000
+        ],
+        "0x2584": [
+          0,
+          -300,
+          614,
+          350
+        ],
+        "0x2588": [
+          0,
+          -300,
+          614,
+          1000
+        ],
+        "0x258c": [
+          0,
+          -300,
+          307,
+          1000
+        ],
+        "0x2590": [
+          307,
+          -300,
+          614,
+          1000
+        ],
+        "0xe0b0": [
+          -20,
+          -300,
+          601,
+          1000
+        ],
+        "0xe0b2": [
+          13,
+          -300,
+          634,
+          1000
+        ]
+      }
+    },
+    {
+      "file": "IntelOneMono-Light.ttf",
+      "baseline_sha256": "e02327a46ef62182532aa0be00408509601575746cd592b87399fa8486847966",
+      "sha256": "0ea95f8bba9a8d9f73344234e197f23fe42db40bc29b72fe8a3e773bb6daaf25",
+      "checks": {
+        "baseline_is_LH1250": true,
+        "new_preferred_height_is_LH1300": true,
+        "xheight_unchanged": true,
+        "non_cell_glyphs_exactly_unchanged": true,
+        "GSUB_exactly_unchanged": true,
+        "all_advances_unchanged": true,
+        "glyph_order_and_cmap_unchanged": true,
+        "font_names_unchanged": true,
+        "win_metrics_unchanged": true,
+        "full_block_box_and_powerline_fit": true,
+        "no_glyph_outside_win_metrics": true,
+        "GPOS_layout_unchanged": true
+      },
+      "failures": [],
+      "non_cell_glyphs_compared": 1185,
+      "unexpected_changed_noncell": [],
+      "cell_glyphs": 200,
+      "cell_bounds": {
+        "0x2500": [
+          -20,
+          320,
+          634,
+          381
+        ],
+        "0x2502": [
+          277,
+          -356,
+          338,
+          1056
+        ],
+        "0x2503": [
+          231,
+          -356,
+          383,
+          1056
+        ],
+        "0x2580": [
+          0,
+          350,
+          614,
+          1000
+        ],
+        "0x2584": [
+          0,
+          -300,
+          614,
+          350
+        ],
+        "0x2588": [
+          0,
+          -300,
+          614,
+          1000
+        ],
+        "0x258c": [
+          0,
+          -300,
+          307,
+          1000
+        ],
+        "0x2590": [
+          307,
+          -300,
+          614,
+          1000
+        ],
+        "0xe0b0": [
+          -20,
+          -300,
+          601,
+          1000
+        ],
+        "0xe0b2": [
+          13,
+          -300,
+          634,
+          1000
+        ]
+      }
+    },
+    {
+      "file": "IntelOneMono-LightItalic.ttf",
+      "baseline_sha256": "1a617cf885be3c39acf949771229f6162297f06517d58a306f664654137a7116",
+      "sha256": "d276fbd32d173b22fa1b1fedf94b15d2934bb82e9ac7e4031eb57e8b1333dece",
+      "checks": {
+        "baseline_is_LH1250": true,
+        "new_preferred_height_is_LH1300": true,
+        "xheight_unchanged": true,
+        "non_cell_glyphs_exactly_unchanged": true,
+        "GSUB_exactly_unchanged": true,
+        "all_advances_unchanged": true,
+        "glyph_order_and_cmap_unchanged": true,
+        "font_names_unchanged": true,
+        "win_metrics_unchanged": true,
+        "full_block_box_and_powerline_fit": true,
+        "no_glyph_outside_win_metrics": true,
+        "GPOS_layout_unchanged": true
+      },
+      "failures": [],
+      "non_cell_glyphs_compared": 1185,
+      "unexpected_changed_noncell": [],
+      "cell_glyphs": 200,
+      "cell_bounds": {
+        "0x2500": [
+          -20,
+          320,
+          634,
+          381
+        ],
+        "0x2502": [
+          277,
+          -356,
+          338,
+          1056
+        ],
+        "0x2503": [
+          231,
+          -356,
+          383,
+          1056
+        ],
+        "0x2580": [
+          0,
+          350,
+          614,
+          1000
+        ],
+        "0x2584": [
+          0,
+          -300,
+          614,
+          350
+        ],
+        "0x2588": [
+          0,
+          -300,
+          614,
+          1000
+        ],
+        "0x258c": [
+          0,
+          -300,
+          307,
+          1000
+        ],
+        "0x2590": [
+          307,
+          -300,
+          614,
+          1000
+        ],
+        "0xe0b0": [
+          -20,
+          -300,
+          601,
+          1000
+        ],
+        "0xe0b2": [
+          13,
+          -300,
+          634,
+          1000
+        ]
+      }
+    },
+    {
+      "file": "IntelOneMono-Medium.ttf",
+      "baseline_sha256": "f68b689e6c7f2f9c42b2f92c76063e330a534d7799e03a5bb218f56b85b44437",
+      "sha256": "fd85a66149a8138284e71966c6ea3a85980473c4e1f568746c9210e93ab9ecba",
+      "checks": {
+        "baseline_is_LH1250": true,
+        "new_preferred_height_is_LH1300": true,
+        "xheight_unchanged": true,
+        "non_cell_glyphs_exactly_unchanged": true,
+        "GSUB_exactly_unchanged": true,
+        "all_advances_unchanged": true,
+        "glyph_order_and_cmap_unchanged": true,
+        "font_names_unchanged": true,
+        "win_metrics_unchanged": true,
+        "full_block_box_and_powerline_fit": true,
+        "no_glyph_outside_win_metrics": true,
+        "GPOS_layout_unchanged": true
+      },
+      "failures": [],
+      "non_cell_glyphs_compared": 1185,
+      "unexpected_changed_noncell": [],
+      "cell_glyphs": 200,
+      "cell_bounds": {
+        "0x2500": [
+          -20,
+          294,
+          634,
+          406
+        ],
+        "0x2502": [
+          251,
+          -356,
+          363,
+          1056
+        ],
+        "0x2503": [
+          211,
+          -356,
+          403,
+          1056
+        ],
+        "0x2580": [
+          0,
+          350,
+          614,
+          1000
+        ],
+        "0x2584": [
+          0,
+          -300,
+          614,
+          350
+        ],
+        "0x2588": [
+          0,
+          -300,
+          614,
+          1000
+        ],
+        "0x258c": [
+          0,
+          -300,
+          307,
+          1000
+        ],
+        "0x2590": [
+          307,
+          -300,
+          614,
+          1000
+        ],
+        "0xe0b0": [
+          -20,
+          -300,
+          601,
+          1000
+        ],
+        "0xe0b2": [
+          13,
+          -300,
+          634,
+          1000
+        ]
+      }
+    },
+    {
+      "file": "IntelOneMono-MediumItalic.ttf",
+      "baseline_sha256": "ff0fc8643f783688677a580d0980f026d1a51198b42c5c3e9eaa67f9e7c238a2",
+      "sha256": "1a785bba2cc46fc862875d5de7486f3a71596a19ab259da25d2c5103416bb6b3",
+      "checks": {
+        "baseline_is_LH1250": true,
+        "new_preferred_height_is_LH1300": true,
+        "xheight_unchanged": true,
+        "non_cell_glyphs_exactly_unchanged": true,
+        "GSUB_exactly_unchanged": true,
+        "all_advances_unchanged": true,
+        "glyph_order_and_cmap_unchanged": true,
+        "font_names_unchanged": true,
+        "win_metrics_unchanged": true,
+        "full_block_box_and_powerline_fit": true,
+        "no_glyph_outside_win_metrics": true,
+        "GPOS_layout_unchanged": true
+      },
+      "failures": [],
+      "non_cell_glyphs_compared": 1185,
+      "unexpected_changed_noncell": [],
+      "cell_glyphs": 200,
+      "cell_bounds": {
+        "0x2500": [
+          -20,
+          294,
+          634,
+          406
+        ],
+        "0x2502": [
+          251,
+          -356,
+          363,
+          1056
+        ],
+        "0x2503": [
+          211,
+          -356,
+          403,
+          1056
+        ],
+        "0x2580": [
+          0,
+          350,
+          614,
+          1000
+        ],
+        "0x2584": [
+          0,
+          -300,
+          614,
+          350
+        ],
+        "0x2588": [
+          0,
+          -300,
+          614,
+          1000
+        ],
+        "0x258c": [
+          0,
+          -300,
+          307,
+          1000
+        ],
+        "0x2590": [
+          307,
+          -300,
+          614,
+          1000
+        ],
+        "0xe0b0": [
+          -20,
+          -300,
+          601,
+          1000
+        ],
+        "0xe0b2": [
+          13,
+          -300,
+          634,
+          1000
+        ]
+      }
+    },
+    {
+      "file": "IntelOneMono-Regular.ttf",
+      "baseline_sha256": "aaac129c01e1921db18e2a64aad41de59fbe792f86cc510a1431df3eaec60ca1",
+      "sha256": "98572b68f5cb6baf932fb7a6f3d4141172695138098f859cdf18fc0bc0e29792",
+      "checks": {
+        "baseline_is_LH1250": true,
+        "new_preferred_height_is_LH1300": true,
+        "xheight_unchanged": true,
+        "non_cell_glyphs_exactly_unchanged": true,
+        "GSUB_exactly_unchanged": true,
+        "all_advances_unchanged": true,
+        "glyph_order_and_cmap_unchanged": true,
+        "font_names_unchanged": true,
+        "win_metrics_unchanged": true,
+        "full_block_box_and_powerline_fit": true,
+        "no_glyph_outside_win_metrics": true,
+        "GPOS_layout_unchanged": true
+      },
+      "failures": [],
+      "non_cell_glyphs_compared": 1185,
+      "unexpected_changed_noncell": [],
+      "cell_glyphs": 200,
+      "cell_bounds": {
+        "0x2500": [
+          -20,
+          307,
+          634,
+          394
+        ],
+        "0x2502": [
+          264,
+          -356,
+          351,
+          1056
+        ],
+        "0x2503": [
+          221,
+          -356,
+          393,
+          1056
+        ],
+        "0x2580": [
+          0,
+          350,
+          614,
+          1000
+        ],
+        "0x2584": [
+          0,
+          -300,
+          614,
+          350
+        ],
+        "0x2588": [
+          0,
+          -300,
+          614,
+          1000
+        ],
+        "0x258c": [
+          0,
+          -300,
+          307,
+          1000
+        ],
+        "0x2590": [
+          307,
+          -300,
+          614,
+          1000
+        ],
+        "0xe0b0": [
+          -20,
+          -300,
+          601,
+          1000
+        ],
+        "0xe0b2": [
+          13,
+          -300,
+          634,
+          1000
+        ]
+      }
     }
   ],
   "collection": {
-    "file": "collection/IntelOneMono.ttc",
-    "sha256": "ff32fe1a7ee9f47ee95b67f9000fc059d3bcf889b4dfeaa7cd7e023c983bbe00",
-    "checks": {
-      "eight_faces": true,
-      "face_order_matches": true,
-      "IntelOneMono-Regular:table_payload_matches_TTF": true,
-      "IntelOneMono-Regular:FreeType_height1250": true,
-      "IntelOneMono-Regular:FreeType_eight_faces": true,
-      "IntelOneMono-Regular:TTCollection_metrics1250": true,
-      "IntelOneMono-Regular:sample_render_loads_pass": true,
-      "IntelOneMono-Italic:table_payload_matches_TTF": true,
-      "IntelOneMono-Italic:FreeType_height1250": true,
-      "IntelOneMono-Italic:FreeType_eight_faces": true,
-      "IntelOneMono-Italic:TTCollection_metrics1250": true,
-      "IntelOneMono-Italic:sample_render_loads_pass": true,
-      "IntelOneMono-Light:table_payload_matches_TTF": true,
-      "IntelOneMono-Light:FreeType_height1250": true,
-      "IntelOneMono-Light:FreeType_eight_faces": true,
-      "IntelOneMono-Light:TTCollection_metrics1250": true,
-      "IntelOneMono-Light:sample_render_loads_pass": true,
-      "IntelOneMono-LightItalic:table_payload_matches_TTF": true,
-      "IntelOneMono-LightItalic:FreeType_height1250": true,
-      "IntelOneMono-LightItalic:FreeType_eight_faces": true,
-      "IntelOneMono-LightItalic:TTCollection_metrics1250": true,
-      "IntelOneMono-LightItalic:sample_render_loads_pass": true,
-      "IntelOneMono-Medium:table_payload_matches_TTF": true,
-      "IntelOneMono-Medium:FreeType_height1250": true,
-      "IntelOneMono-Medium:FreeType_eight_faces": true,
-      "IntelOneMono-Medium:TTCollection_metrics1250": true,
-      "IntelOneMono-Medium:sample_render_loads_pass": true,
-      "IntelOneMono-MediumItalic:table_payload_matches_TTF": true,
-      "IntelOneMono-MediumItalic:FreeType_height1250": true,
-      "IntelOneMono-MediumItalic:FreeType_eight_faces": true,
-      "IntelOneMono-MediumItalic:TTCollection_metrics1250": true,
-      "IntelOneMono-MediumItalic:sample_render_loads_pass": true,
-      "IntelOneMono-Bold:table_payload_matches_TTF": true,
-      "IntelOneMono-Bold:FreeType_height1250": true,
-      "IntelOneMono-Bold:FreeType_eight_faces": true,
-      "IntelOneMono-Bold:TTCollection_metrics1250": true,
-      "IntelOneMono-Bold:sample_render_loads_pass": true,
-      "IntelOneMono-BoldItalic:table_payload_matches_TTF": true,
-      "IntelOneMono-BoldItalic:FreeType_height1250": true,
-      "IntelOneMono-BoldItalic:FreeType_eight_faces": true,
-      "IntelOneMono-BoldItalic:TTCollection_metrics1250": true,
-      "IntelOneMono-BoldItalic:sample_render_loads_pass": true,
-      "OTS_pass": true
-    },
-    "failures": [],
+    "file": "IntelOneMono.ttc",
+    "sha256": "1cbe053f9497af9e574db946eb205b3e6634797c054349b6d39e76de6bd849e8",
     "faces": [
       {
-        "index": 0,
-        "postscript_name": "IntelOneMono-Regular",
-        "checks": {
-          "table_payload_matches_TTF": true,
-          "FreeType_height1250": true,
-          "FreeType_eight_faces": true,
-          "TTCollection_metrics1250": true,
-          "sample_render_loads_pass": true
-        }
+        "PostScript_name": "IntelOneMono-Regular",
+        "preferred_line_height": 1300
       },
       {
-        "index": 1,
-        "postscript_name": "IntelOneMono-Italic",
-        "checks": {
-          "table_payload_matches_TTF": true,
-          "FreeType_height1250": true,
-          "FreeType_eight_faces": true,
-          "TTCollection_metrics1250": true,
-          "sample_render_loads_pass": true
-        }
+        "PostScript_name": "IntelOneMono-Italic",
+        "preferred_line_height": 1300
       },
       {
-        "index": 2,
-        "postscript_name": "IntelOneMono-Light",
-        "checks": {
-          "table_payload_matches_TTF": true,
-          "FreeType_height1250": true,
-          "FreeType_eight_faces": true,
-          "TTCollection_metrics1250": true,
-          "sample_render_loads_pass": true
-        }
+        "PostScript_name": "IntelOneMono-Light",
+        "preferred_line_height": 1300
       },
       {
-        "index": 3,
-        "postscript_name": "IntelOneMono-LightItalic",
-        "checks": {
-          "table_payload_matches_TTF": true,
-          "FreeType_height1250": true,
-          "FreeType_eight_faces": true,
-          "TTCollection_metrics1250": true,
-          "sample_render_loads_pass": true
-        }
+        "PostScript_name": "IntelOneMono-LightItalic",
+        "preferred_line_height": 1300
       },
       {
-        "index": 4,
-        "postscript_name": "IntelOneMono-Medium",
-        "checks": {
-          "table_payload_matches_TTF": true,
-          "FreeType_height1250": true,
-          "FreeType_eight_faces": true,
-          "TTCollection_metrics1250": true,
-          "sample_render_loads_pass": true
-        }
+        "PostScript_name": "IntelOneMono-Medium",
+        "preferred_line_height": 1300
       },
       {
-        "index": 5,
-        "postscript_name": "IntelOneMono-MediumItalic",
-        "checks": {
-          "table_payload_matches_TTF": true,
-          "FreeType_height1250": true,
-          "FreeType_eight_faces": true,
-          "TTCollection_metrics1250": true,
-          "sample_render_loads_pass": true
-        }
+        "PostScript_name": "IntelOneMono-MediumItalic",
+        "preferred_line_height": 1300
       },
       {
-        "index": 6,
-        "postscript_name": "IntelOneMono-Bold",
-        "checks": {
-          "table_payload_matches_TTF": true,
-          "FreeType_height1250": true,
-          "FreeType_eight_faces": true,
-          "TTCollection_metrics1250": true,
-          "sample_render_loads_pass": true
-        }
+        "PostScript_name": "IntelOneMono-Bold",
+        "preferred_line_height": 1300
       },
       {
-        "index": 7,
-        "postscript_name": "IntelOneMono-BoldItalic",
-        "checks": {
-          "table_payload_matches_TTF": true,
-          "FreeType_height1250": true,
-          "FreeType_eight_faces": true,
-          "TTCollection_metrics1250": true,
-          "sample_render_loads_pass": true
-        }
+        "PostScript_name": "IntelOneMono-BoldItalic",
+        "preferred_line_height": 1300
       }
-    ],
-    "comparison_method": "Raw stored SFNT table bytes, ignoring only head.checkSumAdjustment; no recompilation or timestamp mutation."
-  },
-  "all_checks_passed": true,
-  "total_failed_checks": 0
+    ]
+  }
 }
