@@ -1,0 +1,22 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+/.venv/
+
+# Original inputs, generated font binaries, and the font-embedded preview.
+/source-otf/
+/source-ttf/
+/intermediate-otf/
+/fonts/
+/collection/
+/Preview.html
+*.[oO][tT][fF]
+*.[tT][tT][fF]
+*.[tT][tT][cC]
+*.[oO][tT][cC]
+*.[wW][oO][fF][fF]
+*.[wW][oO][fF][fF]2
+
+# Local package manifest and converter logs.
+/SHA256SUMS.txt
+/logs/
