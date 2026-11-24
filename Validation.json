@@ -1,6 +1,6 @@
 {
   "family": "Intel One Mono",
-  "validation_date": "2026-11-23",
+  "validation_date": "2026-11-24",
   "all_checks_passed": true,
   "total_failed_checks": 0,
   "total_TTF_rasterizer_loads": 44320,
@@ -15,7 +15,7 @@
   "fonts": [
     {
       "file": "IntelOneMono-Bold.ttf",
-      "sha256": "0a73dd32ca8d555a230c704875b8836e773252fa56d09854149d3b33c56b3a71",
+      "sha256": "405a020fe116e9ff6f697d4081ec3cc5f9c480f05bd428c1ac3a332324942430",
       "source_sha256": "30c297c63a73921bcfb392904f5541faf2722f8739cc4fe9739ac14f8c8eaec6",
       "checks": {
         "ots": true,
@@ -33,6 +33,9 @@
         "ascender_and_dot_tops_preserved": true,
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
+        "lowercase_s_bottom_preserved": true,
+        "lowercase_s_spine_is_translated_without_stretching": true,
+        "lowercase_s_spine_thickness_preserved": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
         "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
@@ -89,6 +92,10 @@
         "ss02": true,
         "ss03": true,
         "ss04": true
+      },
+      "lowercase_s_spine_thickness": {
+        "original": 120.25,
+        "modified": 120.25
       },
       "cell_bounds": {
         "0x2500": [
@@ -160,7 +167,7 @@
     },
     {
       "file": "IntelOneMono-BoldItalic.ttf",
-      "sha256": "231823a11a69f14d3e90b6302f1cc082f99901734fc785f78b95a5363ee1602a",
+      "sha256": "ab8478d9211111d1b99f20e8b389be17f89ae7880238f8dd79f65add255e65a3",
       "source_sha256": "2b0f7c4e13845c3720c07a5d4efe9df626d3be10f606e5c94732ef4b3f36d3bd",
       "checks": {
         "ots": true,
@@ -178,6 +185,9 @@
         "ascender_and_dot_tops_preserved": true,
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
+        "lowercase_s_bottom_preserved": true,
+        "lowercase_s_spine_is_translated_without_stretching": true,
+        "lowercase_s_spine_thickness_preserved": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
         "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
@@ -234,6 +244,10 @@
         "ss02": true,
         "ss03": true,
         "ss04": true
+      },
+      "lowercase_s_spine_thickness": {
+        "original": 126.64,
+        "modified": 126.63
       },
       "cell_bounds": {
         "0x2500": [
@@ -305,7 +319,7 @@
     },
     {
       "file": "IntelOneMono-Italic.ttf",
-      "sha256": "4e2038dcd22798c55ad15a35df440c7c30fc96ee91a8e2b4aaa0d2693c221901",
+      "sha256": "e437b76b14b71c358f36e39f6e2f9835a1bfa02bbfbee395b0505de385f58be0",
       "source_sha256": "8ef394a3e9d3d83d07556a14c04a9a1ceac8deaae152c608d82145c42812ace1",
       "checks": {
         "ots": true,
@@ -323,6 +337,9 @@
         "ascender_and_dot_tops_preserved": true,
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
+        "lowercase_s_bottom_preserved": true,
+        "lowercase_s_spine_is_translated_without_stretching": true,
+        "lowercase_s_spine_thickness_preserved": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
         "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
@@ -379,6 +396,10 @@
         "ss02": true,
         "ss03": true,
         "ss04": true
+      },
+      "lowercase_s_spine_thickness": {
+        "original": 83.52,
+        "modified": 83.52
       },
       "cell_bounds": {
         "0x2500": [
@@ -450,7 +471,7 @@
     },
     {
       "file": "IntelOneMono-Light.ttf",
-      "sha256": "0ea95f8bba9a8d9f73344234e197f23fe42db40bc29b72fe8a3e773bb6daaf25",
+      "sha256": "cac1c94dff9346664a80e411487ea8986b1c638201bb2b312cf38911b91901ff",
       "source_sha256": "ac2ce72941aeba486d30da4d55957f15d3888c1f302e73482cf3fe74a56ef2c6",
       "checks": {
         "ots": true,
@@ -468,6 +489,9 @@
         "ascender_and_dot_tops_preserved": true,
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
+        "lowercase_s_bottom_preserved": true,
+        "lowercase_s_spine_is_translated_without_stretching": true,
+        "lowercase_s_spine_thickness_preserved": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
         "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
@@ -524,6 +548,10 @@
         "ss02": true,
         "ss03": true,
         "ss04": true
+      },
+      "lowercase_s_spine_thickness": {
+        "original": 60.05,
+        "modified": 60.05
       },
       "cell_bounds": {
         "0x2500": [
@@ -595,7 +623,7 @@
     },
     {
       "file": "IntelOneMono-LightItalic.ttf",
-      "sha256": "d276fbd32d173b22fa1b1fedf94b15d2934bb82e9ac7e4031eb57e8b1333dece",
+      "sha256": "7f05ed08dc7f2bc002c6f5d2cd22f8eaa062f6f1c0a8e2958440a52e65c5cf1c",
       "source_sha256": "9a93126429e91bccdda7109860ed0dfdbe3c66ea1702b371dfb17a56b55aef5c",
       "checks": {
         "ots": true,
@@ -613,6 +641,9 @@
         "ascender_and_dot_tops_preserved": true,
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
+        "lowercase_s_bottom_preserved": true,
+        "lowercase_s_spine_is_translated_without_stretching": true,
+        "lowercase_s_spine_thickness_preserved": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
         "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
@@ -669,6 +700,10 @@
         "ss02": true,
         "ss03": true,
         "ss04": true
+      },
+      "lowercase_s_spine_thickness": {
+        "original": 62.36,
+        "modified": 62.36
       },
       "cell_bounds": {
         "0x2500": [
@@ -740,7 +775,7 @@
     },
     {
       "file": "IntelOneMono-Medium.ttf",
-      "sha256": "fd85a66149a8138284e71966c6ea3a85980473c4e1f568746c9210e93ab9ecba",
+      "sha256": "c91b01b15122de45bed33dbe995ac75a4478890cdecebdc29fdb1b8cd5f65d43",
       "source_sha256": "346b87209566d93376205581b22541833375fb835e98f707d76585de5c3b54c9",
       "checks": {
         "ots": true,
@@ -758,6 +793,9 @@
         "ascender_and_dot_tops_preserved": true,
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
+        "lowercase_s_bottom_preserved": true,
+        "lowercase_s_spine_is_translated_without_stretching": true,
+        "lowercase_s_spine_thickness_preserved": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
         "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
@@ -814,6 +852,10 @@
         "ss02": true,
         "ss03": true,
         "ss04": true
+      },
+      "lowercase_s_spine_thickness": {
+        "original": 97.68,
+        "modified": 97.68
       },
       "cell_bounds": {
         "0x2500": [
@@ -885,7 +927,7 @@
     },
     {
       "file": "IntelOneMono-MediumItalic.ttf",
-      "sha256": "1a785bba2cc46fc862875d5de7486f3a71596a19ab259da25d2c5103416bb6b3",
+      "sha256": "6cb0e02a5a99c4bf3385e74b7a26e784b0f675a33f2c9fcb7b6c3bfdf5f00781",
       "source_sha256": "469b93e5789ff6336840b3e30cb07a288a355d992aa18af7544eec6fed8219ea",
       "checks": {
         "ots": true,
@@ -903,6 +945,9 @@
         "ascender_and_dot_tops_preserved": true,
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
+        "lowercase_s_bottom_preserved": true,
+        "lowercase_s_spine_is_translated_without_stretching": true,
+        "lowercase_s_spine_thickness_preserved": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
         "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
@@ -959,6 +1004,10 @@
         "ss02": true,
         "ss03": true,
         "ss04": true
+      },
+      "lowercase_s_spine_thickness": {
+        "original": 103.97,
+        "modified": 103.95
       },
       "cell_bounds": {
         "0x2500": [
@@ -1030,7 +1079,7 @@
     },
     {
       "file": "IntelOneMono-Regular.ttf",
-      "sha256": "98572b68f5cb6baf932fb7a6f3d4141172695138098f859cdf18fc0bc0e29792",
+      "sha256": "92aa8f14ad0391d2fc6d6973da3411dcaa7c5cb7485b785cf402e93aebf04e83",
       "source_sha256": "ca7968fea6381d0cfa91ab8f70d50a9fb256867fbe63170aa24bb5afe68532a9",
       "checks": {
         "ots": true,
@@ -1048,6 +1097,9 @@
         "ascender_and_dot_tops_preserved": true,
         "descender_bottoms_preserved": true,
         "plain_lowercase_body_tops_plus_45": true,
+        "lowercase_s_bottom_preserved": true,
+        "lowercase_s_spine_is_translated_without_stretching": true,
+        "lowercase_s_spine_thickness_preserved": true,
         "all_non_target_outlines_match_independently_converted_official_CFF": true,
         "preferred_hhea_and_typo_metrics": true,
         "USE_TYPO_METRICS_set": true,
@@ -1104,6 +1156,10 @@
         "ss02": true,
         "ss03": true,
         "ss04": true
+      },
+      "lowercase_s_spine_thickness": {
+        "original": 79.22,
+        "modified": 79.22
       },
       "cell_bounds": {
         "0x2500": [
@@ -1176,7 +1232,7 @@
   ],
   "collection": {
     "file": "IntelOneMono.ttc",
-    "sha256": "1cbe053f9497af9e574db946eb205b3e6634797c054349b6d39e76de6bd849e8",
+    "sha256": "604c391440a7bf34acea4e9af8c79aa58a35ceedd4df20ca2ddf253ca0f35b4c",
     "checks": {
       "TTC_signature": true,
       "exactly_eight_faces": true,

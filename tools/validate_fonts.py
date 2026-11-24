@@ -15,11 +15,13 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import string
 import unicodedata as ud
 from io import BytesIO
 from pathlib import Path
 
+from fontTools.pens.recordingPen import RecordingPen
 from fontTools.ttLib import TTFont, TTCollection
 from afdko.otf2ttf import otf_to_ttf
 import freetype
@@ -53,6 +55,31 @@ def bounds(font, name):
     if not glyph.numberOfContours:
         return None
     return [glyph.xMin, glyph.yMin, glyph.xMax, glyph.yMax]
+
+
+def lowercase_s_spine_edges(font):
+    pen = RecordingPen()
+    font.getGlyphSet()["s"].draw(pen)
+    edges = []
+    for op, points in pen.value:
+        if op == "lineTo":
+            left, right = sorted((start, points[0]))
+            # The central edges are shallow descending lines, unlike the
+            # steep terminal cuts. Ignore zero-length lines from the converter.
+            if 0 < left[1] - right[1] < right[0] - left[0]:
+                edges.append((left, right))
+        if points:
+            start = points[-1]
+    return sorted(edges, key=lambda edge: edge[0][1] + edge[1][1])
+
+
+def spine_vertical_thickness(edges, x):
+    if len(edges) != 2 or not all(left[0] <= x <= right[0] for left, right in edges):
+        return None
+    lower, upper = (
+        y0 + (x - x0) * (y1 - y0) / (x1 - x0) for ((x0, y0), (x1, y1)) in edges
+    )
+    return round(upper - lower, 2)
 
 
 def independent_conversion(path, max_error):
@@ -132,6 +159,22 @@ def validate(original_path, modified_path, intermediate_path, max_error):
     check("ascender_and_dot_tops_preserved", all(bounds(modified, n)[3] == bounds(reference, n)[3] for n in "bdfhijktl"))
     check("descender_bottoms_preserved", all(bounds(modified, n)[1] == bounds(reference, n)[1] for n in "gjpqy"))
     check("plain_lowercase_body_tops_plus_45", all(bounds(modified, n)[3] == bounds(reference, n)[3] + 45 for n in "acegmnopqrsuvwxyz"))
+    check("lowercase_s_bottom_preserved", bounds(modified, "s")[1] == bounds(reference, "s")[1])
+
+    before_spine, after_spine = lowercase_s_spine_edges(reference), lowercase_s_spine_edges(modified)
+    rise = 45 / 2
+    shift = rise * math.tan(math.radians(-reference["post"].italicAngle))
+    center = reference["hmtx"]["s"][0] / 2
+    before_thickness = spine_vertical_thickness(before_spine, center)
+    after_thickness = spine_vertical_thickness(after_spine, center + shift)
+    check("lowercase_s_spine_is_translated_without_stretching",
+          len(before_spine) == len(after_spine) == 2 and
+          all(abs(x2 - x1 - shift) <= 1 and abs(y2 - y1 - rise) <= 1
+              for old_edge, new_edge in zip(before_spine, after_spine)
+              for (x1, y1), (x2, y2) in zip(old_edge, new_edge)))
+    check("lowercase_s_spine_thickness_preserved",
+          before_thickness is not None and after_thickness is not None
+          and abs(before_thickness - after_thickness) <= 1)
 
     lower_targets = {n for cp, n in ocmap.items() if ud.category(chr(cp)) == "Ll" and cp != 0x2139}
     lower_targets |= {"i.dot", "w_w_w.liga"}
@@ -247,6 +290,7 @@ def validate(original_path, modified_path, intermediate_path, max_error):
         "shaping_failures": shaping_failures,
         "mark_position_probes": mark_position_probes,
         "stylistic_set_effects": feature_effects,
+        "lowercase_s_spine_thickness": {"original": before_thickness, "modified": after_thickness},
         "cell_bounds": cell_bounds,
         "outside_Win_bounds": outside_win,
         "real_xheight": bounds(modified, "x")[3],
@@ -344,7 +388,7 @@ def main():
     failures = sum(len(r["failures"]) for r in results) + len(ttc_result["failures"])
     report = {
         "family": TTFont(fonts[0])["name"].getBestFamilyName(),
-        "validation_date": "2026-11-23",
+        "validation_date": "2026-11-24",
         "all_checks_passed": failures == 0,
         "total_failed_checks": failures,
         "total_TTF_rasterizer_loads": sum(r["rasterizer_loads"] for r in results),

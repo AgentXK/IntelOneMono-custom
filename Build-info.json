@@ -1,7 +1,7 @@
 {
   "family": "Intel One Mono",
-  "version": "1.504",
-  "date": "2026-11-23",
+  "version": "1.505",
+  "date": "2026-11-24",
   "regular_xheight": 510,
   "weight_policy": "Each original style x-height +45 units; original inter-weight offsets retained.",
   "name_policy": "Original family/full/PostScript/style names retained at user request.",
@@ -54,7 +54,7 @@
       "source_otf": "IntelOneMono-Regular.otf",
       "source_otf_sha256": "ca7968fea6381d0cfa91ab8f70d50a9fb256867fbe63170aa24bb5afe68532a9",
       "component_reference_ttf_sha256": "4f7c53457806dd33fcb297f94313fd2c266bc912265a59ec55c93e4de57df3cd",
-      "intermediate_otf_sha256": "923ddeec10859c063912e4cf48523ef40d4dcc0a9690734453592b6aacc5d961",
+      "intermediate_otf_sha256": "c633f8a58a5840976975bcd9abfc486ea6d5f503653ee6b0cfaf7c28642951d1",
       "xheight_before": 465,
       "xheight_after": 510,
       "cap_height": 655,
@@ -477,6 +477,14 @@
         "zdotaccent",
         "uni1E93",
         "uni1E95"
+      ],
+      "s_spine_protected": [
+        "s",
+        "sacute",
+        "scircumflex",
+        "scaron",
+        "uni0219",
+        "uni1E63"
       ],
       "cell_glyphs_changed": [
         "uni2500",
@@ -693,7 +701,7 @@
       ],
       "horizontal_stroke_guard": 72.0,
       "file": "IntelOneMono-Regular.ttf",
-      "sha256": "98572b68f5cb6baf932fb7a6f3d4141172695138098f859cdf18fc0bc0e29792",
+      "sha256": "92aa8f14ad0391d2fc6d6973da3411dcaa7c5cb7485b785cf402e93aebf04e83",
       "global_y_bounds": [
         -356,
         1098
@@ -704,7 +712,7 @@
       "source_otf": "IntelOneMono-Italic.otf",
       "source_otf_sha256": "8ef394a3e9d3d83d07556a14c04a9a1ceac8deaae152c608d82145c42812ace1",
       "component_reference_ttf_sha256": "3da45bb3e32262a9f901a4ae6c098b46bfa4b453ad976ef592d85e3c0328974b",
-      "intermediate_otf_sha256": "a228db9c8b8a30e02ad29d9fe841cba22d0ae057a404fb9fdb75a36b08918366",
+      "intermediate_otf_sha256": "61587ee5dc40ee4e8614f9d22f7e82f18770fe0f64a5100b7a7ea10bad317c25",
       "xheight_before": 465,
       "xheight_after": 510,
       "cap_height": 655,
@@ -1128,6 +1136,14 @@
         "uni1E93",
         "uni1E95"
       ],
+      "s_spine_protected": [
+        "s",
+        "sacute",
+        "scircumflex",
+        "scaron",
+        "uni0219",
+        "uni1E63"
+      ],
       "cell_glyphs_changed": [
         "uni2500",
         "uni2501",
@@ -1334,7 +1350,7 @@
       "original_cff_component_placement_exceptions_preserved": [],
       "horizontal_stroke_guard": 72.0,
       "file": "IntelOneMono-Italic.ttf",
-      "sha256": "4e2038dcd22798c55ad15a35df440c7c30fc96ee91a8e2b4aaa0d2693c221901",
+      "sha256": "e437b76b14b71c358f36e39f6e2f9835a1bfa02bbfbee395b0505de385f58be0",
       "global_y_bounds": [
         -356,
         1096
@@ -1345,7 +1361,7 @@
       "source_otf": "IntelOneMono-Light.otf",
       "source_otf_sha256": "ac2ce72941aeba486d30da4d55957f15d3888c1f302e73482cf3fe74a56ef2c6",
       "component_reference_ttf_sha256": "9825c44e7bcf7a1f813b3ad82298c1f4362949786c03b34fb94968813ccb8ef2",
-      "intermediate_otf_sha256": "78715df4dcd768fd049e8d73d95f0643a0f75a982b7a9fecaafba13195238b9b",
+      "intermediate_otf_sha256": "9b9636e94e9bdfe56c5ac5014977e3fc47f5c3071938447e72848fc37e5369d4",
       "xheight_before": 460,
       "xheight_after": 505,
       "cap_height": 655,
@@ -1768,6 +1784,14 @@
         "zdotaccent",
         "uni1E93",
         "uni1E95"
+      ],
+      "s_spine_protected": [
+        "s",
+        "sacute",
+        "scircumflex",
+        "scaron",
+        "uni0219",
+        "uni1E63"
       ],
       "cell_glyphs_changed": [
         "uni2500",
@@ -1975,7 +1999,7 @@
       "original_cff_component_placement_exceptions_preserved": [],
       "horizontal_stroke_guard": 50.0,
       "file": "IntelOneMono-Light.ttf",
-      "sha256": "0ea95f8bba9a8d9f73344234e197f23fe42db40bc29b72fe8a3e773bb6daaf25",
+      "sha256": "cac1c94dff9346664a80e411487ea8986b1c638201bb2b312cf38911b91901ff",
       "global_y_bounds": [
         -356,
         1089
@@ -1986,7 +2010,7 @@
       "source_otf": "IntelOneMono-LightItalic.otf",
       "source_otf_sha256": "9a93126429e91bccdda7109860ed0dfdbe3c66ea1702b371dfb17a56b55aef5c",
       "component_reference_ttf_sha256": "cdeed7db7e09e217f3ad173bee614aae8562fffc1ecc1b3f1674f683bd2a9009",
-      "intermediate_otf_sha256": "19c17d5b79f7d61680244f9741644beb38eda3ea3493ec9dce95b129c0fb25a0",
+      "intermediate_otf_sha256": "9a7b10e0d69418b3a0f1e0d74c6fcd3f3c8ee10c3ad9b654077d83a960bff8c0",
       "xheight_before": 460,
       "xheight_after": 505,
       "cap_height": 655,
@@ -2410,6 +2434,14 @@
         "uni1E93",
         "uni1E95"
       ],
+      "s_spine_protected": [
+        "s",
+        "sacute",
+        "scircumflex",
+        "scaron",
+        "uni0219",
+        "uni1E63"
+      ],
       "cell_glyphs_changed": [
         "uni2500",
         "uni2501",
@@ -2616,7 +2648,7 @@
       "original_cff_component_placement_exceptions_preserved": [],
       "horizontal_stroke_guard": 50.0,
       "file": "IntelOneMono-LightItalic.ttf",
-      "sha256": "d276fbd32d173b22fa1b1fedf94b15d2934bb82e9ac7e4031eb57e8b1333dece",
+      "sha256": "7f05ed08dc7f2bc002c6f5d2cd22f8eaa062f6f1c0a8e2958440a52e65c5cf1c",
       "global_y_bounds": [
         -356,
         1084
@@ -2627,7 +2659,7 @@
       "source_otf": "IntelOneMono-Medium.otf",
       "source_otf_sha256": "346b87209566d93376205581b22541833375fb835e98f707d76585de5c3b54c9",
       "component_reference_ttf_sha256": "afcaaa4141e539d698179ed8fe98784cf28050a67b615c44522b6506b765a471",
-      "intermediate_otf_sha256": "26d340c9d0dc5d844d753ee1131032f240e40c6e49a9954f02779a8329cdbd76",
+      "intermediate_otf_sha256": "f3d9074b4fd3821a4151eb1856147566260ac6b0ccec5f7083edfb02c08eacd4",
       "xheight_before": 471,
       "xheight_after": 516,
       "cap_height": 655,
@@ -3050,6 +3082,14 @@
         "zdotaccent",
         "uni1E93",
         "uni1E95"
+      ],
+      "s_spine_protected": [
+        "s",
+        "sacute",
+        "scircumflex",
+        "scaron",
+        "uni0219",
+        "uni1E63"
       ],
       "cell_glyphs_changed": [
         "uni2500",
@@ -3257,7 +3297,7 @@
       "original_cff_component_placement_exceptions_preserved": [],
       "horizontal_stroke_guard": 95.0,
       "file": "IntelOneMono-Medium.ttf",
-      "sha256": "fd85a66149a8138284e71966c6ea3a85980473c4e1f568746c9210e93ab9ecba",
+      "sha256": "c91b01b15122de45bed33dbe995ac75a4478890cdecebdc29fdb1b8cd5f65d43",
       "global_y_bounds": [
         -356,
         1106
@@ -3268,7 +3308,7 @@
       "source_otf": "IntelOneMono-MediumItalic.otf",
       "source_otf_sha256": "469b93e5789ff6336840b3e30cb07a288a355d992aa18af7544eec6fed8219ea",
       "component_reference_ttf_sha256": "5116c077c82f60e5f2a2cff3013504b30bc8688c7800d41b7636d7782a048e2b",
-      "intermediate_otf_sha256": "c7304ac30b7250425f50788b5fa29fc877f108642def5d59bf0a25c27beefb48",
+      "intermediate_otf_sha256": "2a92f3b277b3c2758930e48b3e97039f4bb4322cd8b8eac209824cdada38928d",
       "xheight_before": 471,
       "xheight_after": 516,
       "cap_height": 655,
@@ -3692,6 +3732,14 @@
         "uni1E93",
         "uni1E95"
       ],
+      "s_spine_protected": [
+        "s",
+        "sacute",
+        "scircumflex",
+        "scaron",
+        "uni0219",
+        "uni1E63"
+      ],
       "cell_glyphs_changed": [
         "uni2500",
         "uni2501",
@@ -3898,7 +3946,7 @@
       "original_cff_component_placement_exceptions_preserved": [],
       "horizontal_stroke_guard": 95.0,
       "file": "IntelOneMono-MediumItalic.ttf",
-      "sha256": "1a785bba2cc46fc862875d5de7486f3a71596a19ab259da25d2c5103416bb6b3",
+      "sha256": "6cb0e02a5a99c4bf3385e74b7a26e784b0f675a33f2c9fcb7b6c3bfdf5f00781",
       "global_y_bounds": [
         -356,
         1108
@@ -3909,7 +3957,7 @@
       "source_otf": "IntelOneMono-Bold.otf",
       "source_otf_sha256": "30c297c63a73921bcfb392904f5541faf2722f8739cc4fe9739ac14f8c8eaec6",
       "component_reference_ttf_sha256": "dbc7aea81749bf871df972433e8ece09ca428d68bcdeb0a2bf2569c4f1f7bded",
-      "intermediate_otf_sha256": "3e2c4e8ebb56497176b4b958abd2d12a88ed68260e531ce6bd6428b198bf6f8d",
+      "intermediate_otf_sha256": "e8d2795b9d0a24953a38f540daceb3777f9a3c60bfcbadd1b10dac7756871196",
       "xheight_before": 477,
       "xheight_after": 522,
       "cap_height": 655,
@@ -4332,6 +4380,14 @@
         "zdotaccent",
         "uni1E93",
         "uni1E95"
+      ],
+      "s_spine_protected": [
+        "s",
+        "sacute",
+        "scircumflex",
+        "scaron",
+        "uni0219",
+        "uni1E63"
       ],
       "cell_glyphs_changed": [
         "uni2500",
@@ -4539,7 +4595,7 @@
       "original_cff_component_placement_exceptions_preserved": [],
       "horizontal_stroke_guard": 122.0,
       "file": "IntelOneMono-Bold.ttf",
-      "sha256": "0a73dd32ca8d555a230c704875b8836e773252fa56d09854149d3b33c56b3a71",
+      "sha256": "405a020fe116e9ff6f697d4081ec3cc5f9c480f05bd428c1ac3a332324942430",
       "global_y_bounds": [
         -356,
         1117
@@ -4550,7 +4606,7 @@
       "source_otf": "IntelOneMono-BoldItalic.otf",
       "source_otf_sha256": "2b0f7c4e13845c3720c07a5d4efe9df626d3be10f606e5c94732ef4b3f36d3bd",
       "component_reference_ttf_sha256": "3a9525a7b160abed3054a8f24b91b3de53fb31072000dd9a333a08b050edeaae",
-      "intermediate_otf_sha256": "aa2cc791238490ef37277763b25cc237d9bceac368e502782a8ecd055443c179",
+      "intermediate_otf_sha256": "5475dbb9165af94891fee3e7876f1579dd730a050f52b26e1c4248ccbce22fba",
       "xheight_before": 477,
       "xheight_after": 522,
       "cap_height": 655,
@@ -4973,6 +5029,14 @@
         "zdotaccent",
         "uni1E93",
         "uni1E95"
+      ],
+      "s_spine_protected": [
+        "s",
+        "sacute",
+        "scircumflex",
+        "scaron",
+        "uni0219",
+        "uni1E63"
       ],
       "cell_glyphs_changed": [
         "uni2500",
@@ -5205,7 +5269,7 @@
       ],
       "horizontal_stroke_guard": 122.0,
       "file": "IntelOneMono-BoldItalic.ttf",
-      "sha256": "231823a11a69f14d3e90b6302f1cc082f99901734fc785f78b95a5363ee1602a",
+      "sha256": "ab8478d9211111d1b99f20e8b389be17f89ae7880238f8dd79f65add255e65a3",
       "global_y_bounds": [
         -356,
         1122
@@ -5214,7 +5278,7 @@
   ],
   "collection": {
     "file": "collection/IntelOneMono.ttc",
-    "sha256": "1cbe053f9497af9e574db946eb205b3e6634797c054349b6d39e76de6bd849e8",
+    "sha256": "604c391440a7bf34acea4e9af8c79aa58a35ceedd4df20ca2ddf253ca0f35b4c",
     "face_order": [
       "Regular",
       "Italic",

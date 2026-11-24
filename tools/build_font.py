@@ -29,7 +29,8 @@ from fontTools.ttLib import TTCollection, TTFont
 from cff_components import classify, splitContours
 
 FAMILY = "Intel One Mono"
-VERSION = "1.504"
+VERSION = "1.505"
+BUILD_DATE = "2026-11-24"
 DELTA = 45
 # Add the extra line space above the baseline so vertical box strokes still
 # fit the existing Windows clipping descent of 360 units.
@@ -109,15 +110,45 @@ def map_contour(contour: tuple, point_map) -> list:
     return [(operation, tuple(point_map(*point) for point in points)) for operation, points in contour]
 
 
+def raise_s_contour(contour: tuple, slope: float) -> list:
+    """Lift both edges of the s spine together instead of stretching across it."""
+    bottom, lower_turn, spine, upper_turn, top = (DELTA * i / 4 for i in range(5))
+    # On-curve points in the upstream 1.5.0 s contour (also used in accented s).
+    profile = (
+        ("moveTo", lower_turn),
+        ("curveTo", spine), ("lineTo", spine), ("curveTo", upper_turn),  # upper spine edge
+        ("curveTo", top), ("curveTo", top), ("lineTo", top),
+        ("curveTo", top), ("curveTo", upper_turn),  # upper terminal and bowl
+        ("curveTo", spine), ("lineTo", spine), ("curveTo", lower_turn),  # lower spine edge
+        ("curveTo", bottom), ("curveTo", bottom), ("lineTo", bottom),
+        ("curveTo", bottom), ("curveTo", lower_turn),  # lower terminal and bowl
+        ("closePath", bottom),
+    )
+    if tuple(op for op, _ in contour) != tuple(op for op, _ in profile):
+        raise ValueError("Unexpected contour structure for the upstream lowercase s")
+
+    updated = []
+    previous_rise = lower_turn
+    for (op, points), (_, rise) in zip(contour, profile, strict=True):
+        # Cubic handles follow the nearer endpoint, preserving the tangent at
+        # both joins. Use the same italic shear as the other lowercase glyphs.
+        rises = (previous_rise, rise, rise) if op == "curveTo" else (rise,) if points else ()
+        updated.append((op, tuple((x + dy * slope, y + dy)
+                                  for (x, y), dy in zip(points, rises, strict=True))))
+        previous_rise = rise
+    return updated
+
+
 def preserve_names_update_metadata(font: TTFont, style: str) -> None:
     table = font["name"]
     replacement = {
-        3: f"{VERSION};XHED;IntelOneMono-{style};XH510LH{LINE_HEIGHT}Custom20261123",
+        3: f"{VERSION};XHED;IntelOneMono-{style};XH510LH{LINE_HEIGHT}Custom{BUILD_DATE.replace('-', '')}",
         5: f"Version {VERSION}; Custom XH510 LH{LINE_HEIGHT}; AFDKO otf2ttf",
         10: (
             "User-requested custom edit of Intel One Mono 1.5.0. Original family, "
             "style and PostScript names retained. Regular/Italic x-height 510; "
             "all weights raised 45 units to preserve original weight differences. "
+            "The lowercase s spine retains its original weight. "
             f"Preferred line height {LINE_HEIGHT}/1000 em. Edited CFF outlines exported by "
             "Adobe AFDKO otf2ttf, without TrueType hinting. Not an official Intel "
             "release. Original OFL and Reserved Font Name provisions still apply."
@@ -160,6 +191,7 @@ def edit_cff(source: Path, ttf_reference: Path, destination: Path) -> dict:
     top = font["CFF "].cff.topDictIndex[0]
     private = top.Private
     changed, composite_names, cells, placement_exceptions = [], [], [], []
+    protected_s_glyphs = []
 
     def write_charstring(name: str, record: list) -> None:
         # A CFF width operand is relative to nominalWidthX, not absolute.
@@ -192,8 +224,12 @@ def edit_cff(source: Path, ttf_reference: Path, destination: Path) -> dict:
             correction = tuple(owner["translation_correction"])
             if correction != (0, 0):
                 placement_exceptions.append({"glyph": name, "component": component_name, "correction": correction})
-            points = [point for operation, operands in contour for point in operands]
             if owner["is_base"]:
+                if component_name == "s":
+                    updated.extend(raise_s_contour(contour, slope))
+                    protected_s_glyphs.append(name)
+                    continue
+                points = [point for operation, operands in contour for point in operands]
                 keep_dot = component_name in DOTTED and min(y - dy for x, y in points) > xheight + 40
                 component_top = bounds[component_name][3]
                 def transform(x, y):
@@ -270,6 +306,7 @@ def edit_cff(source: Path, ttf_reference: Path, destination: Path) -> dict:
         "preferred_line_height_before": 1380, "preferred_line_height_after": LINE_HEIGHT,
         "hhea_and_typo": [ASCENT, DESCENT, 0], "win_clipping_metrics": [WIN_ASCENT, WIN_DESCENT],
         "lowercase_changed": changed, "composite_lowercase_updated": composite_names,
+        "s_spine_protected": protected_s_glyphs,
         "cell_glyphs_changed": cells, "mark_base_anchors_changed": anchors_changed,
         "original_cff_component_placement_exceptions_preserved": placement_exceptions,
         "horizontal_stroke_guard": guard,
@@ -319,7 +356,7 @@ def main() -> None:
     assert len(ttc.fonts) == 8
     assert [font["name"].getDebugName(6) for font in ttc.fonts] == [f"IntelOneMono-{style}" for style in STYLES]
     report = {
-        "family": FAMILY, "version": VERSION, "date": "2026-11-23", "regular_xheight": 510,
+        "family": FAMILY, "version": VERSION, "date": BUILD_DATE, "regular_xheight": 510,
         "weight_policy": "Each original style x-height +45 units; original inter-weight offsets retained.",
         "name_policy": "Original family/full/PostScript/style names retained at user request.",
         "upstream": "https://github.com/intel/intel-one-mono/releases/tag/V1.5.0",
