@@ -28,6 +28,8 @@ import freetype
 import ots
 import uharfbuzz as hb
 
+EXPECTED_REGULAR_XHEIGHT = 500
+EXPECTED_XHEIGHT_DELTA = 35
 EXPECTED_ASCENT, EXPECTED_DESCENT = 1000, -300
 EXPECTED_LINE_HEIGHT = EXPECTED_ASCENT - EXPECTED_DESCENT
 
@@ -154,15 +156,20 @@ def validate(original_path, modified_path, intermediate_path, max_error):
                           for n in font["name"].names if n.nameID in display_ids)
         check("original_display_family_and_style_names_preserved", display_names(original) == display_names(modified))
     check("UPM_1000", modified["head"].unitsPerEm == 1000)
-    check("real_xheight_plus_45", bounds(modified, "x")[3] == bounds(reference, "x")[3] + 45 == modified["OS/2"].sxHeight)
+    real_xheight = bounds(modified, "x")[3]
+    check("real_xheight_matches_expected_increase",
+          real_xheight == bounds(reference, "x")[3] + EXPECTED_XHEIGHT_DELTA == modified["OS/2"].sxHeight)
+    if original["OS/2"].usWeightClass == 400:
+        check("regular_weight_xheight_matches_target", real_xheight == EXPECTED_REGULAR_XHEIGHT)
     check("cap_height_655", modified["OS/2"].sCapHeight == original["OS/2"].sCapHeight == 655)
     check("ascender_and_dot_tops_preserved", all(bounds(modified, n)[3] == bounds(reference, n)[3] for n in "bdfhijktl"))
     check("descender_bottoms_preserved", all(bounds(modified, n)[1] == bounds(reference, n)[1] for n in "gjpqy"))
-    check("plain_lowercase_body_tops_plus_45", all(bounds(modified, n)[3] == bounds(reference, n)[3] + 45 for n in "acegmnopqrsuvwxyz"))
+    check("plain_lowercase_body_tops_follow_xheight_increase",
+          all(bounds(modified, n)[3] == bounds(reference, n)[3] + EXPECTED_XHEIGHT_DELTA for n in "acegmnopqrsuvwxyz"))
     check("lowercase_s_bottom_preserved", bounds(modified, "s")[1] == bounds(reference, "s")[1])
 
     before_spine, after_spine = lowercase_s_spine_edges(reference), lowercase_s_spine_edges(modified)
-    rise = 45 / 2
+    rise = EXPECTED_XHEIGHT_DELTA / 2
     shift = rise * math.tan(math.radians(-reference["post"].italicAngle))
     center = reference["hmtx"]["s"][0] / 2
     before_thickness = spine_vertical_thickness(before_spine, center)
@@ -234,7 +241,8 @@ def validate(original_path, modified_path, intermediate_path, max_error):
                 shaping_failures.append({"text": text, "language": language, "features": features, "before": before, "after": after})
     check("sample_shaping_glyphs_and_advances_preserved", not shaping_failures)
     mark_position_probes = {}
-    for text, expected_y_delta in [("p\u0303", 45), ("j\u0301", 45), ("P\u0303", 0), ("x\u0323", 0)]:
+    for text, expected_y_delta in [("p\u0303", EXPECTED_XHEIGHT_DELTA), ("j\u0301", EXPECTED_XHEIGHT_DELTA),
+                                   ("P\u0303", 0), ("x\u0323", 0)]:
         before, after = shape(ohb, text), shape(mhb, text)
         found = (len(before) == len(after) == 2 and before[-1][1] == after[-1][1] == 0)
         delta = after[-1][4] - before[-1][4] if found else None
@@ -293,7 +301,7 @@ def validate(original_path, modified_path, intermediate_path, max_error):
         "lowercase_s_spine_thickness": {"original": before_thickness, "modified": after_thickness},
         "cell_bounds": cell_bounds,
         "outside_Win_bounds": outside_win,
-        "real_xheight": bounds(modified, "x")[3],
+        "real_xheight": real_xheight,
         "recorded_xheight": modified["OS/2"].sxHeight,
         "preferred_line_height": face.height,
         "Win_line_height": os2.usWinAscent + os2.usWinDescent,
@@ -388,7 +396,7 @@ def main():
     failures = sum(len(r["failures"]) for r in results) + len(ttc_result["failures"])
     report = {
         "family": TTFont(fonts[0])["name"].getBestFamilyName(),
-        "validation_date": "2026-11-24",
+        "validation_date": "2026-11-25",
         "all_checks_passed": failures == 0,
         "total_failed_checks": failures,
         "total_TTF_rasterizer_loads": sum(r["rasterizer_loads"] for r in results),

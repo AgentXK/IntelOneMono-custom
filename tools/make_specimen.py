@@ -14,7 +14,7 @@ from fontTools.ttLib import TTFont
 from PIL import Image, ImageDraw, ImageFont
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-OUT = SCRIPT_DIR.parent if SCRIPT_DIR.name == "tools" else SCRIPT_DIR / "IntelOneMono-XH510"
+OUT = SCRIPT_DIR.parent if SCRIPT_DIR.name == "tools" else SCRIPT_DIR
 UPSTREAM = OUT / "source-ttf"
 MODIFIED = OUT / "fonts"
 
@@ -182,7 +182,7 @@ body.light-code .editor{background:#fff;border-color:var(--rule);color:var(--ink
 <body><main>
 <div class="eyebrow">TYPE SPECIMEN / 离线字体对比</div>
 <h1>Intel One Mono <small>XH__XAFTER__ / LH__LAFTER__ / AFDKO 修改版</small></h1>
-<p class="intro">基于官方 OTF 修改并经 AFDKO otf2ttf 导出的版本：Regular x-height 为 510，保留原字体名称。左侧为官方原版 TTF，右侧为本次最终 TTF。两侧字号始终相同；你可以编辑任意一侧的代码，另一侧会同步显示，并切换行距模式单独比较字形。</p>
+<p class="intro">基于官方 OTF 修改并经 AFDKO otf2ttf 导出的版本：Regular x-height 为 __XAFTER__，保留原字体名称。左侧为官方原版 TTF，右侧为本次最终 TTF。两侧字号始终相同；你可以编辑任意一侧的代码，另一侧会同步显示，并切换行距模式单独比较字形。</p>
 <section class="metrics" aria-label="度量变化">
 <div class="metric"><span>Regular 小写 x-height</span><strong>__XBEFORE__ → __XAFTER__</strong><em>约 +__XPERCENT__%</em></div>
 <div class="metric"><span>推荐行高 / 每 em = 1000</span><strong>__LBEFORE__ → __LAFTER__</strong><em>约 −__LPERCENT__%</em></div>
@@ -203,7 +203,7 @@ body.light-code .editor{background:#fff;border-color:var(--rule);color:var(--ink
 <div class="styles"><p class="font"><label>Regular</label>aegstfij  Il1|  O0o</p><p class="font"><label>Italic</label><i>aegstfij  Il1|  O0o</i></p><p class="font"><label>Bold</label><b>aegstfij  Il1|  O0o</b></p></div>
 </section>
 <section class="column after" aria-label="修改版">
-<header><h2>修改版 Intel One Mono</h2><span class="badge">x-height 510</span></header>
+<header><h2>修改版 Intel One Mono</h2><span class="badge">x-height __XAFTER__</span></header>
 <div class="sample"><p class="large font">Hx aenomgp</p><p class="caption">小写高度 __XAFTER__ · 大写高度 __CAPHEIGHT__</p></div>
 <pre id="modified" class="editor font" contenteditable="true" spellcheck="false" aria-label="修改版可编辑代码">__CODE__</pre>
 <div class="styles"><p class="font"><label>Regular</label>aegstfij  Il1|  O0o</p><p class="font"><label>Italic</label><i>aegstfij  Il1|  O0o</i></p><p class="font"><label>Bold</label><b>aegstfij  Il1|  O0o</b></p></div>

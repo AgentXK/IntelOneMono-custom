@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the x-height 510 Intel One Mono custom edit through Adobe AFDKO.
+"""Build the custom Intel One Mono with a raised x-height through Adobe AFDKO.
 
 Pipeline: original CFF OTF -> edited CFF OTF -> afdko.otf2ttf -> final TTF
           -> afdko.otf2otc -> eight-face TTC.
@@ -29,9 +29,10 @@ from fontTools.ttLib import TTCollection, TTFont
 from cff_components import classify, splitContours
 
 FAMILY = "Intel One Mono"
-VERSION = "1.505"
-BUILD_DATE = "2026-11-24"
-DELTA = 45
+VERSION = "1.506"
+BUILD_DATE = "2026-11-25"
+REGULAR_XHEIGHT = 500
+DELTA = REGULAR_XHEIGHT - 465  # Upstream Regular and Italic x-height
 # Add the extra line space above the baseline so vertical box strokes still
 # fit the existing Windows clipping descent of 360 units.
 ASCENT, DESCENT = 1000, -300
@@ -142,12 +143,12 @@ def raise_s_contour(contour: tuple, slope: float) -> list:
 def preserve_names_update_metadata(font: TTFont, style: str) -> None:
     table = font["name"]
     replacement = {
-        3: f"{VERSION};XHED;IntelOneMono-{style};XH510LH{LINE_HEIGHT}Custom{BUILD_DATE.replace('-', '')}",
-        5: f"Version {VERSION}; Custom XH510 LH{LINE_HEIGHT}; AFDKO otf2ttf",
+        3: f"{VERSION};XHED;IntelOneMono-{style};XH{REGULAR_XHEIGHT}LH{LINE_HEIGHT}Custom{BUILD_DATE.replace('-', '')}",
+        5: f"Version {VERSION}; Custom XH{REGULAR_XHEIGHT} LH{LINE_HEIGHT}; AFDKO otf2ttf",
         10: (
             "User-requested custom edit of Intel One Mono 1.5.0. Original family, "
-            "style and PostScript names retained. Regular/Italic x-height 510; "
-            "all weights raised 45 units to preserve original weight differences. "
+            f"style and PostScript names retained. Regular/Italic x-height {REGULAR_XHEIGHT}; "
+            f"all weights raised {DELTA} units to preserve original weight differences. "
             "The lowercase s spine retains its original weight. "
             f"Preferred line height {LINE_HEIGHT}/1000 em. Edited CFF outlines exported by "
             "Adobe AFDKO otf2ttf, without TrueType hinting. Not an official Intel "
@@ -334,6 +335,8 @@ def main() -> None:
         stem = f"IntelOneMono-{style}"
         record = edit_cff(root / "source-otf" / f"{stem}.otf", root / "source-ttf" / f"{stem}.ttf",
                           root / "intermediate-otf" / f"{stem}.otf")
+        if style in ("Regular", "Italic"):
+            assert record["xheight_after"] == REGULAR_XHEIGHT
         records.append(record)
         print(style, "CFF x-height", record["xheight_before"], "->", record["xheight_after"], flush=True)
     input_otfs = [f"intermediate-otf/IntelOneMono-{style}.otf" for style in STYLES]
@@ -356,8 +359,8 @@ def main() -> None:
     assert len(ttc.fonts) == 8
     assert [font["name"].getDebugName(6) for font in ttc.fonts] == [f"IntelOneMono-{style}" for style in STYLES]
     report = {
-        "family": FAMILY, "version": VERSION, "date": BUILD_DATE, "regular_xheight": 510,
-        "weight_policy": "Each original style x-height +45 units; original inter-weight offsets retained.",
+        "family": FAMILY, "version": VERSION, "date": BUILD_DATE, "regular_xheight": REGULAR_XHEIGHT,
+        "weight_policy": f"Each original style x-height +{DELTA} units; original inter-weight offsets retained.",
         "name_policy": "Original family/full/PostScript/style names retained at user request.",
         "upstream": "https://github.com/intel/intel-one-mono/releases/tag/V1.5.0",
         "license": "SIL Open Font License 1.1; original Reserved Font Name remains applicable",
